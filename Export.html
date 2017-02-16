@@ -1,0 +1,103 @@
+﻿<html>
+	
+<head>
+	<title>Export</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="Export">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "index.html?" + sTopicUrl
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Export");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Export</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Gui.html">Gui</a> &rsaquo;&rsaquo; <a href="Hotlist.html">Hotlist</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Hotlist.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Import.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="ValidateInstall.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts12">Export</span></span></h1>
+<p class="rvps2"><a class="rvts14" href="Hotlist.html">Hotlist</a><span class="rvts6"> can export a </span><span class="rvts6">AutoHotkey Snippit</span><span class="rvts6"> File </span><span class="rvts22">(a profile with all the current plugins)</span><span class="rvts6"> or </span><a class="rvts14" href="Hotlist.html">Hotlist</a><span class="rvts6"> can export individual plugins.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">To Export a </span><span class="rvts6">AutoHotkey Snippit</span><span class="rvts23"> File</span><span class="rvts6"> Just go to the </span><span class="rvts23">File / Export / Snippit Install</span><span class="rvts6"> as shown in </span><a class="rvts14" href="Export.html#fig1">figure 1</a><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">To Export a single </span><span class="rvts23">Plugin</span><span class="rvts6"> select the plugin for export in the </span><a class="rvts14" href="Hotlist.html#filter_plugin">Hotlist Plugin</a><span class="rvts6"> drop down list. Go to the </span><span class="rvts23">File / Export / Selected Plugin</span><span class="rvts6"> as shown in </span><a class="rvts14" href="Export.html#fig2">figure 2</a><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig1"></a>
+<span class="rvts13">Figure 1:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_mnuExport_snippit_install.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig2"></a>
+<span class="rvts13">Figure 2:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_mnuExport_selected_plugin.png"></p>
+<h3 class="rvps7"><a name="remarks"></a>
+<span class="rvts0"><span class="rvts24">Remarks</span></span></h3>
+<p class="rvps2"><span class="rvts6">Exported files will contain all code contained within the plugin and/or profile except for code that is added in include plugins using the AutoHotKey #include directive. See</span><a class="rvts14" href="IncludeFile.html"> Include File</a><span class="rvts6"> for more information on #include.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps7"><a name="related"></a>
+<span class="rvts0"><span class="rvts24">Related</span></span></h3>
+<p class="rvps2"><a class="rvts14" href="Import.html">Import</a></p>
+<p class="rvps2"><a class="rvts14" href="Hotlist.html">Hotlist</a></p>
+<p class="rvps2"><a class="rvts14" href="Plugin.html">Plugin</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2014 - 2017 by Paul Moss. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

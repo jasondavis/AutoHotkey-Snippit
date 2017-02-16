@@ -1,0 +1,88 @@
+﻿<html>
+	
+<head>
+	<title>Copy/Move</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "index.html?" + sTopicUrl
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("CopyMove");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Copy/Move</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Gui.html">Gui</a> &rsaquo;&rsaquo; <a href="Hotlist.html">Hotlist</a> &rsaquo;&rsaquo; <a href="Plugin.html">Plugin</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Plugin.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Edit1.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="CloneObject.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts12">Copy / Move Plugin</span></span></h1>
+<p class="rvps2"><span class="rvts6">Plugins can be Copied or moved to other </span><a class="rvts14" href="Profile1.html">Profile</a><span class="rvts6">. The Move / Copy options will become enabled when there is more then one Profile in the Profile drop down list and a Plugin is selected in the Plugin drop down list.</span><br/><span class="rvts6"></span><br/><span class="rvts6">Moving a Plugin will remove it from the current profile selected in the list as show in </span><a class="rvts14" href="CopyMove.html#fig1">figure 1</a><span class="rvts6"> and add it to the selected profile as show in </span><a class="rvts14" href="CopyMove.html#fig2">figure 2</a><span class="rvts6">.</span><br/><span class="rvts6">Copying a Plugin will copy the Plugin selected in the current profile selected as show in </span><a class="rvts14" href="CopyMove.html#fig1">figure 1</a><span class="rvts6"> and copy it to the selected profile as shown in </span><a class="rvts14" href="CopyMove.html#fig2">figure 2</a><span class="rvts6">.</span><br/><span class="rvts6"></span><br/><span class="rvts6">When a Plugin is Copied or moved all the Hotkeys, Hotstring and Include are copied or moved with it.</span><br/><span class="rvts6"></span><br/><a name="FIG1"></a>
+<span class="rvts21">Figure 1:</span></p>
+<p class="rvps2"><img alt="hotlist_plugin_move_copy.png" style="vertical-align: text-bottom;" src="lib/Image Hotlist plugin move copy.png"><br/><span class="rvts11"></span><br/><a name="FIG2"></a>
+<span class="rvts21">Figure 2:</span></p>
+<p class="rvps2"><img alt="hotlist_plugin_select_profile.png" style="vertical-align: text-bottom;" src="lib/Image Hotlist plugin select profile.png"></p>
+<h3 class="rvps7"><span class="rvts0"><span class="rvts24">Related</span></span></h3>
+<p class="rvps2"><a class="rvts14" href="Profile1.html">Profile</a><br/><span class="rvts6"><br/></span></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2014 - 2017 by Paul Moss. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

@@ -1,0 +1,102 @@
+﻿<html>
+	
+<head>
+	<title>Hotlist</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "index.html?" + sTopicUrl
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Hotlist");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Hotlist</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Gui.html">Gui</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Gui.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Gui.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Profile1.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts12">Hotlist Graphic User Interface</span></span></h1>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">The Hotlist is where you can view, swap, filter and edit exiting profiles and plugin. Most all changes will take place from the Hotlist interface.</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Hotlist Labeled Map.png" usemap="#2ECCB35D70DB4F179A986B9CE40F4567"><map name="2ECCB35D70DB4F179A986B9CE40F4567"><area shape="rect" coords="233,217,254,241" alt="New Profile" title="New Profile" href="NewProfile.html"><area shape="rect" coords="257,218,278,241" alt="Edit Profile" title="Edit Profile" href="EditProfile.html"><area shape="rect" coords="290,217,314,240" alt="New Plugin" title="New Plugin" href="Plugin.html"><area shape="rect" coords="314,218,338,242" alt="" title="" href="Plugin.html"><area shape="rect" coords="373,215,394,241" alt="Copy Pluign" title="Copy Pluign" href="CopyMove.html"><area shape="rect" coords="398,220,421,241" alt="Move Plugin" title="Move Plugin" href="CopyMove.html"><area shape="rect" coords="171,254,458,278" alt="Filter Profile" title="Filter Profile" href="Hotlist.html#filter_profile"><area shape="rect" coords="169,292,457,316" alt="Filter Plugin" title="Filter Plugin" href="Hotlist.html#filter_plugin"><area shape="rect" coords="505,253,777,274" alt="Filter Type" title="Filter Type" href="Hotlist.html#filter_type"><area shape="rect" coords="504,286,781,311" alt="Filter Category" title="Filter Category" href="Hotlist.html#filter_category"></map></p>
+<p class="rvps2"><a name="Exit"></a>
+<span class="rvts6">Exit Closes the Hotlist</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts13">Filters:</span></p>
+<p class="rvps12"><a name="filter_profile"></a>
+<span class="rvts6">Profile Filter allows you to view the other available profiles</span></p>
+<p class="rvps12"><span class="rvts6"><br/></span></p>
+<p class="rvps12"><a name="filter_plugin"></a>
+<span class="rvts6">Plugin Filter will filter the list to show only items from the selected plugin</span></p>
+<p class="rvps12"><span class="rvts6"><br/></span></p>
+<p class="rvps12"><a name="filter_type"></a>
+<span class="rvts6">Type Filter will filter the list to show only the selected type such as Hotkey or Hotstring.</span></p>
+<p class="rvps12"><span class="rvts6"><br/></span></p>
+<p class="rvps12"><a name="filter_category"></a>
+<span class="rvts6">Category Filter will filter the list to show only items in the user defined category</span></p>
+<p class="rvps12"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_icon_save.png"><span class="rvts6">Save, When item in the list are changed such as disabled or when a profile state is changed (</span><span class="rvts22">enable or disabled</span><span class="rvts6">) the list must be save before the changes will take effect.</span></p>
+<p class="rvps2"><span class="rvts13">Note</span><span class="rvts6">: When other edits are done such as</span><a class="rvts14" href="NewProfile.html"> New Profile</a><span class="rvts6">, </span><a class="rvts14" href="EditProfile.html">Edit Profile</a><span class="rvts6">, New Plugin or Edit plugin the changes will take place immediately.</span></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2014 - 2017 by Paul Moss. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

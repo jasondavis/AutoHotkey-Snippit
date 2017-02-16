@@ -1,0 +1,90 @@
+﻿<html>
+	
+<head>
+	<title>Clone Object</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="Clone">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "index.html?" + sTopicUrl
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("CloneObject");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Clone Object</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Gui.html">Gui</a> &rsaquo;&rsaquo; <a href="Hotlist.html">Hotlist</a> &rsaquo;&rsaquo; <a href="Plugin.html">Plugin</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Plugin.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="CopyMove.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="HotstringPlugin.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts12">Clone Object</span></span></h1>
+<p class="rvps2"><span class="rvts6">Clone Object will create a duplicate of the current Hotstring/ Hotkey / Inlcude / Data</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Clone Object will clone the current active Tab.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts32">Note</span><span class="rvts6">:</span></p>
+<p class="rvps12"><span class="rvts6">Cloning a </span><a class="rvts14" href="HotkeyPlugin.html">Hotkey</a><span class="rvts6"> will ill set it to disabled. After Making the necessary changes don't for get to enable the clone.</span></p>
+<p class="rvps12"><span class="rvts6">Cloning a </span><a class="rvts14" href="HotstringPlugin.html">Hotstring</a><span class="rvts6"> ill set it to disabled. After Making the necessary changes don't for get to enable the clone.</span></p>
+<p class="rvps12"><span class="rvts6">Cloning an </span><a class="rvts14" href="IncludePlugin.html">Include</a><span class="rvts6"> will ill set it to disabled. After Making the necessary changes don't for get to enable the clone.</span></p>
+<p class="rvps12"><span class="rvts6">Cloning a </span><a class="rvts14" href="Data.html">Data</a><span class="rvts6"> Item will rename the Name and File Name. Also the Overwrite option will be set to false. Adjust the options before applying changes.</span></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2014 - 2017 by Paul Moss. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

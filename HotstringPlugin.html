@@ -1,0 +1,123 @@
+﻿<html>
+	
+<head>
+	<title>Hotstring Plugin</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="Hotstring, Plugin">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "index.html?" + sTopicUrl
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("HotstringPlugin");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Hotstring Plugin</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Gui.html">Gui</a> &rsaquo;&rsaquo; <a href="Hotlist.html">Hotlist</a> &rsaquo;&rsaquo; <a href="Plugin.html">Plugin</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Plugin.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="CloneObject.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="New.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts12">Hotstring Plugin</span></span></h1>
+<p class="rvps2"><span class="rvts6">Hotstring Plugin's can be use to create triggers that are activate when you type a a word or a set of characters. </span><a class="rvts14" href="HotstringPlugin.html#FIG1">Figure 1</a><span class="rvts6"> shows a example of a string replacement that when you type sf the text is replaced by </span><span class="rvts19">MfString.Format()</span><span class="rvts6">. See </span><a class="rvts14" href="HotstringPlugin.html#FIG3">Figure 3</a><span class="rvts6"> for demo.</span></p>
+<p class="rvps2"><span class="rvts11"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Click on the various control of </span><a class="rvts14" href="HotstringPlugin.html#FIG1">Figure 1</a><span class="rvts6"> to be taken to the description of the control.</span></p>
+<h4 class="rvps13"><span class="rvts0"><span class="rvts11"></span></span><br/><a name="FIG1"></a>
+<span class="rvts0"><span class="rvts21">Figure 1:</span></span></h4>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Map_Hotstring_Options.png" usemap="#2956A4A384FE45BFB602EBAD938ECA06"><map name="2956A4A384FE45BFB602EBAD938ECA06"><area shape="rect" coords="18,130,385,151" alt="Name" title="Name" href="HotstringPlugin.html#NAME"><area shape="rect" coords="19,153,149,169" alt="Case Sensitive" title="Case Sensitive" href="HotstringPlugin.html#CASE"><area shape="rect" coords="18,176,144,193" alt="Trigger Inside" title="Trigger Inside" href="HotstringPlugin.html#TRIGGER_INSIDE"><area shape="rect" coords="21,200,148,217" alt="Omit End Char" title="Omit End Char" href="HotstringPlugin.html#OMIT_END_CHAR"><area shape="rect" coords="18,223,145,242" alt="No Backspace" title="No Backspace" href="HotstringPlugin.html#NO_BACKSPACE"><area shape="rect" coords="18,249,146,267" alt="" title="" href="HotstringPlugin.html#ENABLED"><area shape="rect" coords="18,273,147,289" alt="" title="" href="HotstringPlugin.html#FORCE_CLEAR"><area shape="rect" coords="160,153,290,169" alt="" title="" href="HotstringPlugin.html#SEND_RAW"><area shape="rect" coords="160,176,287,193" alt="Reset Reconizer" title="Reset Reconizer" href="HotstringPlugin.html#RESET_RECOGNIZER"><area shape="rect" coords="160,202,381,223" alt="Send Selection" title="Send Selection" href="HotstringPlugin.html#SEND"><area shape="rect" coords="160,226,381,247" alt="Hotstring" title="Hotstring" href="HotstringPlugin.html#HOTSTRING"><area shape="rect" coords="160,250,289,265" alt="Tabify" title="Tabify" href="HotstringPlugin.html#TABIFY"><area shape="rect" coords="116,299,377,514" alt="Description" title="Description" href="HotstringPlugin.html#DESCRIPTION"><area shape="rect" coords="18,296,77,314" alt="Description" title="Description" href="HotstringPlugin.html#DESCRIPTION"><area shape="rect" coords="412,128,776,148" alt="Category" title="Category" href="HotstringPlugin.html#CATEGORY"><area shape="rect" coords="412,154,778,172" alt="Send Keys" title="Send Keys" href="HotstringPlugin.html#SEND"><area shape="rect" coords="412,176,778,200" alt="Type Selection" title="Type Selection" href="HotstringPlugin.html#TYPE"><area shape="rect" coords="507,200,780,513" alt="Replacement" title="Replacement" href="HotstringPlugin.html#REPLACEMENT"><area shape="rect" coords="412,202,490,220" alt="Replacement" title="Replacement" href="HotstringPlugin.html#REPLACEMENT"><area shape="rect" coords="277,55,305,82" alt="Delete" title="Delete" href="NavigationRecordControl.html#Nav Delete"><area shape="rect" coords="64,56,84,80" alt="First" title="First" href="NavigationRecordControl.html#nav_first"><area shape="rect" coords="252,56,276,79" alt="Add New" title="Add New" href="NavigationRecordControl.html#nav_new"><area shape="rect" coords="88,55,106,79" alt="Previous" title="Previous" href="NavigationRecordControl.html#nav_prev"><area shape="rect" coords="224,56,250,80" alt="Last" title="Last" href="NavigationRecordControl.html#nav_last"><area shape="rect" coords="199,54,220,80" alt="Next" title="Next" href="NavigationRecordControl.html#nav_next"><area shape="rect" coords="111,54,193,80" alt="Go To" title="Go To" href="NavigationRecordControl.html#nav_textbox"><area shape="rect" coords="56,104,135,123" alt="Replacements Tab" title="Replacements Tab" href="Replacements.html"><area shape="rect" coords="51,82,93,100" alt="Hotkeys Tab" title="Hotkeys Tab" href="HotkeyPlugin.html"><area shape="rect" coords="163,81,206,104" alt="Includes" title="Includes" href="IncludePlugin.html"><area shape="rect" coords="9,82,45,101" alt="Main" title="Main" href="Plugin.html"><area shape="rect" coords="38,55,61,77" alt="Save" title="Save" href="Plugin.html#plugin_save"><area shape="rect" coords="14,56,35,76" alt="Exit" title="Exit" href="Plugin.html#plugin_exit"><area shape="rect" coords="210,83,248,102" alt="" title="" href="Data.html"><area shape="rect" coords="312,58,336,82" alt="Clone Object" title="Clone Object" href="CloneObject.html"></map><br/><span class="rvts11"></span><br/><span class="rvts11">Fields that have </span><span class="rvts21">*</span><span class="rvts11"> in the beginning of their name are required fields.</span><br/><span class="rvts11"></span><br/><a name="NAME"></a>
+<span class="rvts21">*Name</span><span class="rvts11">: The name of the hotstring</span><br/><span class="rvts11"></span><br/><a name="CASE"></a>
+<span class="rvts21">Case Sensitive</span><span class="rvts11">: If Checked then the hotstring will be case sensitive.</span><br/><span class="rvts11"></span><br/><a name="SEND_RAW"></a>
+<span class="rvts21">Send Raw</span><span class="rvts11">: </span><span class="rvts6">interprets all characters literally rather than translating {Enter} to an ENTER keystroke. See </span><a class="rvts20" href="https://autohotkey.com/docs/commands/Send.htm" target="_blank">AutoHotkey Send documentation</a><span class="rvts6"> for more information.</span><br/><span class="rvts11"></span><br/><a name="TRIGGER_INSIDE"></a>
+<span class="rvts21">Trigger Inside</span><span class="rvts11">: The hotstring will be triggered even when it is inside another word; that is, when the character typed immediately before it is alphanumeric. For Example if </span><span class="rvts21">al</span><span class="rvts11"> is the hotstring and </span><span class="rvts21">airline</span><span class="rvts11"> is the replacement then&nbsp; typing "practical " would produce "practicairline ". See the </span><span class="rvts21">?</span><span class="rvts6"> option in </span><a class="rvts20" href="https://autohotkey.com/docs/Hotstrings.htm" target="_blank">AutoHotkey Hotstring documentation</a><span class="rvts6"> for more information.</span><br/><span class="rvts11"></span><br/><a name="RESET_RECOGNIZER"></a>
+<span class="rvts21">Reset Recognizer</span><span class="rvts11">: This rarely-used option resets the hotstring recognizer after each triggering of the hotstring. In other words, the script will begin waiting for an entirely new hotstring, eliminating from consideration anything you previously typed. This can prevent unwanted triggering of hotstrings. See the </span><span class="rvts21">Z</span><span class="rvts6"> option in </span><a class="rvts20" href="https://autohotkey.com/docs/Hotstrings.htm" target="_blank">AutoHotkey Hotstring documentation</a><span class="rvts6"> for more information.</span><br/><span class="rvts11"></span><br/><a name="OMIT_END_CHAR"></a>
+<span class="rvts21">Omit End Char</span><span class="rvts11">: Omit the ending character of auto-replace hotstrings when the replacement is produced. This is useful when you want a hotstring to be kept unambiguous by still requiring an ending character, but don't actually want the ending character to be shown on the screen. See the </span><span class="rvts21">O</span><span class="rvts11"> </span><span class="rvts6">option in </span><a class="rvts20" href="https://autohotkey.com/docs/Hotstrings.htm" target="_blank">AutoHotkey Hotstring documentation</a><span class="rvts6"> for more information.</span><br/><span class="rvts11"></span><br/><a name="SEND"></a>
+<span class="rvts21">Send</span><span class="rvts11">: The Method of sending the hotstring to the cursor.</span></p>
+<ul style="text-indent: 0px; margin-left: 40px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps2"><span class="rvts21">Send (default)</span><span class="rvts11">: The Default AutoHotkey Send method</span></li>
+<li class="rvps2"><span class="rvts21">Send Input:</span><span class="rvts11"> Typically has superior speed and reliability than the other modes. Another benefit is that like SendPlay below, SendInput postpones anything you type during a hotstring's auto-replacement text. This prevents your keystrokes from being interspersed with those of the replacement. When SendInput is unavailable, hotstrings automatically use SendPlay instead.</span></li>
+<li class="rvps2"><span class="rvts21">Send Play</span><span class="rvts11">: May allow hotstrings to work in a broader variety of games.</span></li>
+<li class="rvps2"><span class="rvts21">Send Event</span><span class="rvts11">: Which is the default in versions of </span><span class="rvts33">AutoHotkey</span><span class="rvts11"> older than 1.0.43.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts11"></span><br/><span class="rvts11">See the </span><span class="rvts21">Si, SE</span><span class="rvts11"> and </span><span class="rvts21">SP</span><span class="rvts6"> options in </span><a class="rvts20" href="https://autohotkey.com/docs/Hotstrings.htm" target="_blank">AutoHotkey Hotstring documentation</a><span class="rvts6"> for more information on send.</span><br/><span class="rvts11"></span><br/><a name="NO_BACKSPACE"></a>
+<span class="rvts21">No Backspace</span><span class="rvts11">: Automatic backspacing is not done to erase the abbreviation you type. See the </span><span class="rvts21">B0</span><span class="rvts11"> </span><span class="rvts6">option in </span><a class="rvts20" href="https://autohotkey.com/docs/Hotstrings.htm" target="_blank">AutoHotkey Hotstring documentation</a><span class="rvts6"> for more information.</span><br/><span class="rvts11"></span><br/><a name="HOTSTRING"></a>
+<span class="rvts21">*Hotstring</span><span class="rvts11">: The Hotstring trigger the initates the hotstring replacement. For the example in figure 1 typing "</span><span class="rvts21">sf</span><span class="rvts11">" would be replaced with "</span><span class="rvts21">MfString.Format()</span><span class="rvts11">"</span><br/><span class="rvts11"></span><br/><a name="ENABLED"></a>
+<span class="rvts21">Enabled</span><span class="rvts11">: </span><span class="rvts6">If Checked the hotstring will be enabled otherwise the hotstring will be ignored in the </span><a class="rvts14" href="Profile1.html">profile</a><span class="rvts6"> and have no effect.</span><br/><span class="rvts11"></span><br/><a name="TABIFY"></a>
+<span class="rvts21">Tabify</span><span class="rvts11">: Only available for hotstrings of type </span><span class="rvts21">Paste</span><span class="rvts11">. If checked an attempt will be made to get the number of tabs from the cursor to the beginning of the line. The number of tabs will then be appended to the start of each line in the replacement. This may be useful for replacements that are code templates.</span><br/><span class="rvts11"></span><br/><a name="FORCE_CLEAR"></a>
+<span class="rvts21">Force Clear</span><span class="rvts11">: Only available for hotstrings of type </span><span class="rvts21">Paste</span><span class="rvts11">. If checked an attempt will be made to clear any and all text from the cursor to the beginning of the line before the hotstring is inserted.</span><br/><span class="rvts11"></span><br/><a name="DESCRIPTION"></a>
+<span class="rvts21">Description</span><span class="rvts11">: A Description of what the hotstring does.</span><br/><span class="rvts11"></span><br/><a name="CATEGORY"></a>
+<span class="rvts21">Category</span><span class="rvts11">: Categories are a way to group related hotstrings in the main list.</span><br/><span class="rvts11"></span><br/><a name="SEND_KEYS"></a>
+<span class="rvts21">Send Keys</span><span class="rvts11">: These are optional keys to send after the hotstring has finished. Useful for placeing the cursor somwhere into the hotstring replacemet.</span><span class="rvts6"> The example in </span><a class="rvts14" href="HotstringPlugin.html#fig1">figure 1</a><span class="rvts6"> Send Keys is set to</span><span class="rvts21"> {left}</span><span class="rvts11"> this will cause cursor to be set to the center of the () portion of the MfString.Format(). In Effect the </span><span class="rvts21">{left}</span><span class="rvts11"> </span><span class="rvts6">sends the left arrow key after the Hotstring is finished. For more on keys that can be sent see the </span><a class="rvts20" href="https://autohotkey.com/docs/commands/Send.htm" target="_blank">AutoHotkey documentation</a><span class="rvts6">.</span><br/><span class="rvts11"></span><br/><a name="TYPE"></a>
+<span class="rvts21">*Type</span><span class="rvts11">:</span></p>
+<ul style="text-indent: 0px; margin-left: 40px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps2"><span class="rvts21">Inline</span><span class="rvts11">: Replacement is sent using the usual AutoHotkey options </span><span class="rvts6">Depending on </span><a class="rvts14" href="HotstringPlugin.html#SEND">Send</a><span class="rvts6"> method selected for the hotstring</span><span class="rvts11">.</span></li>
+<li class="rvps2"><span class="rvts21">Paste</span><span class="rvts11">: Replacement is sent using the clipboard of the system. The original contents of the clipboard are restored after hotstring if finished.</span></li>
+<li class="rvps2"><span class="rvts21">Code</span><span class="rvts11">: </span><span class="rvts6">Hotstring runs the code in the replacement. </span><a class="rvts14" href="HotstringPlugin.html#FIG2">Figure 2</a><span class="rvts6"> show an example that starts the</span><span class="rvts11"> System Control Panel Mouse settings when you type </span><span class="rvts15">mymouse</span><span class="rvts11">. </span><span class="rvts21">Note</span><span class="rvts11"> is it </span><span class="rvts21">not</span><span class="rvts11"> necessary to end your code statement with return for hotstrings. This is taken care of by the AutoHotkey Snnippit.</span></li>
+</ul>
+<p class="rvps2"><a name="REPLACEMENT"></a>
+<span class="rvts21">*Replacement</span><span class="rvts11">: This is the Hotstring replacement to send when using Type Inline or Paste. When using Type of Code this is the code to run when the hotstring is run.</span><br/><span class="rvts11"></span><br/><a name="FIG2"></a>
+<span class="rvts21">Figure 2</span><span class="rvts11">:</span></p>
+<p class="rvps2"><img alt="plugin_hotstring_code_example_mymouse.png" style="vertical-align: text-bottom;" src="lib/Image Plugin Hotstring code example mymouse.png"><br/><span class="rvts11"></span><br/><a name="FIG3"></a>
+<span class="rvts21">Figure 3</span><span class="rvts11">:</span></p>
+<p class="rvps2"><img alt="sf-mfstring_format.gif" style="vertical-align: text-bottom;" src="lib/staticsf-mfstring_format1.gif"></p>
+<h3 class="rvps7"><span class="rvts0"><span class="rvts24">Related</span></span></h3>
+<p class="rvps2"><span class="rvts14">Hotstring</span><a class="rvts14" href="New.html"> new</a><br/><a class="rvts14" href="Plugin.html">Plugin new</a><br/><span class="rvts11"><br/></span></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2014 - 2017 by Paul Moss. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

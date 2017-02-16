@@ -1,0 +1,162 @@
+﻿<html>
+	
+<head>
+	<title>Hotkeys</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "index.html?" + sTopicUrl
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("IncHotkeys");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Hotkeys</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Gui.html">Gui</a> &rsaquo;&rsaquo; <a href="Hotlist.html">Hotlist</a> &rsaquo;&rsaquo; <a href="Plugin.html">Plugin</a> &rsaquo;&rsaquo; <a href="IncludePlugin.html">Include Plugin</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="IncludePlugin.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Delete2.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="IncHotStrings.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts12">Include Plugin Hotkeys</span></span></h1>
+<p class="rvps2"><span class="rvts6">Suppose we had include code as shown in </span><a class="rvts14" href="IncHotkeys.html#fig2">figure 2</a><span class="rvts6"> for an Include Plugin as shown in </span><a class="rvts14" href="IncHotkeys.html#fig3">figure 3</a><span class="rvts6">. We would need a way to show the hotkeys in the include script back in the </span><a class="rvts14" href="Hotlist.html">Hotlist</a><span class="rvts6"> window as show in </span><a class="rvts14" href="IncHotkeys.html#fig5">figure 5</a><span class="rvts6">. To accomplish this the includes plugin add a Hotkeys section for listing the hotkeys in the include code. The code in </span><a class="rvts14" href="IncHotkeys.html#fig2">figure 2</a><span class="rvts6"> might be described as shown in </span><a class="rvts14" href="IncHotkeys.html#fig1">figure 1</a><span class="rvts6">. Now all the hotkeys in </span><a class="rvts14" href="IncHotkeys.html#fig1">figure 1</a><span class="rvts6"> will be listed in </span><a class="rvts14" href="Hotlist.html">Hotlist</a><span class="rvts6"> as well. This gives a way to describe hotkeys in the include for the end user.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">To Add a new Hotkey description to the include just click an empty row and start typing in the Hotkey description. When you get to the Hotkey filed a window will pop-up to help you with the hotkey as shown in </span><a class="rvts14" href="IncHotkeys.html#fig4">figure 4</a><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">To Delete a hotkey from the list click the delete button </span><img alt="" style="vertical-align: middle; padding : 1px;" src="lib/Image_grid_btn_del.png"><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig1"></a>
+<span class="rvts13">Figure 1:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_Plugin_include_hotkey_popup_hotkey_grid.png"></p>
+<p class="rvps2"><span class="rvts43"><br/></span></p>
+<p class="rvps2"><a name="fig2"></a>
+<span class="rvts13">Figure 2:</span></p>
+<p class="rvps2"><span class="rvts43"><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">; Control Panel Run Commands</span>
+<span style="color: #333333">^</span>#K<span style="color: #333333">::</span>
+{
+    <span style="color: #007020">Run</span> control main<span style="color: #333333">.</span>cpl @1
+    <span style="color: #007020">return</span>
+}
+<span style="color: #333333">^</span>#D<span style="color: #333333">::</span>
+{
+    <span style="color: #007020">Run</span> control desk<span style="color: #333333">.</span>cpl
+    <span style="color: #007020">return</span>
+}
+<span style="color: #333333">^</span>#M<span style="color: #333333">::</span>
+{
+    <span style="color: #007020">Run</span> control main<span style="color: #333333">.</span>cpl
+    <span style="color: #007020">return</span>
+}
+<span style="color: #333333">^</span>#N<span style="color: #333333">::</span>
+{
+    <span style="color: #007020">Run</span> control ncpa<span style="color: #333333">.</span>cpl
+    <span style="color: #007020">return</span>
+}
+<span style="color: #333333">^</span>#P<span style="color: #333333">::</span>
+{
+    <span style="color: #007020">Run</span> control powercfg<span style="color: #333333">.</span>cpl
+    <span style="color: #007020">return</span>
+}
+<span style="color: #333333">^</span>#A<span style="color: #333333">::</span>
+{
+    <span style="color: #007020">Run</span> control appwiz<span style="color: #333333">.</span>cpl
+    <span style="color: #007020">return</span>
+}
+<span style="color: #333333">^</span>#I<span style="color: #333333">::</span>
+{
+    <span style="color: #007020">Run</span> control inetcpl<span style="color: #333333">.</span>cpl
+    <span style="color: #007020">return</span>
+}
+<span style="color: #333333">^</span>#U<span style="color: #333333">::</span>
+{
+    <span style="color: #007020">Run</span> control nusrmgr<span style="color: #333333">.</span>cpl
+    <span style="color: #007020">return</span>
+}
+<span style="color: #333333">^</span>#F<span style="color: #333333">::</span>
+{
+    <span style="color: #007020">Run</span> control firewall<span style="color: #333333">.</span>cpl
+    <span style="color: #007020">return</span>
+}
+<span style="color: #333333">^</span>#B<span style="color: #333333">::</span>
+{
+    <span style="color: #007020">Run</span> control bthprops<span style="color: #333333">.</span>cpl,<span style="color: #996633">%A_WinDir%</span>\system32,,
+    <span style="color: #007020">return</span>
+}
+</pre></div>
+</span></p>
+<p class="rvps2"><span class="rvts43"><br/></span></p>
+<p class="rvps2"><span class="rvts43"><br/></span></p>
+<p class="rvps2"><a name="fig3"></a>
+<span class="rvts13">Figure 3:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_plugin_include_cp_shortcuts_edit.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig4"></a>
+<span class="rvts13">Figure 4:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_Plugin_include_hotkey_popup_edit.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig5"></a>
+<span class="rvts13">Figure 5:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_Hotlist_cp_shortcuts.png"></p>
+<h3 class="rvps7"><span class="rvts0"><span class="rvts24">Related</span></span></h3>
+<p class="rvps2"><a class="rvts14" href="IncHotStrings.html">HotStrings</a></p>
+<p class="rvps2"><a class="rvts14" href="IncludePlugin.html">Include Plugin</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2014 - 2017 by Paul Moss. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

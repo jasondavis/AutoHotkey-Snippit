@@ -1,0 +1,86 @@
+﻿<html>
+	
+<head>
+	<title>EndChars</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "index.html?" + sTopicUrl
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("EndChars");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">EndChars</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Gui.html">Gui</a> &rsaquo;&rsaquo; <a href="Hotlist.html">Hotlist</a> &rsaquo;&rsaquo; <a href="Profile1.html">Profile</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Profile1.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="GlobalProfile.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="WindowsTab.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts12">End Chars</span></span></h1>
+<p class="rvps2"><span class="rvts11"></span><br/><span class="rvts29">Unless the </span><span class="rvts30">Omit End Char</span><span class="rvts29"> option is selected for a </span><span class="rvts30">Hotstring</span><span class="rvts29"> you must type an&nbsp;ending character after a hotstring's abbreviation to trigger it. Ending characters initially consist of the following:</span><span class="rvts31"> -()[]{}':;"/\,.?!</span><span class="rvts29"> as well as </span><span class="rvts31">New Line</span><span class="rvts29"> and </span><span class="rvts31">Tab</span><span class="rvts29">. </span><span class="rvts30">Note: </span><span class="rvts31">New Line</span><span class="rvts29"> is trigger by pressing </span><span class="rvts30">Enter/Return</span><span class="rvts29"> on the keyboard. The initial Ending characters will be in effect if </span><span class="rvts31">End Chars</span><span class="rvts29"> has no options selected. If, however there are </span><span class="rvts31">End Chars</span><span class="rvts29"> selected then only the selected ending characters from the </span><span class="rvts31">End Chars</span><span class="rvts29"> list will be in effect.</span><br/><span class="rvts29"></span><br/><span class="rvts6">End Chars set in the </span><a class="rvts14" href="Profile1.html">Profile</a><span class="rvts6"> affect all Hotstring that do not have the Omit End Char option set.</span><br/><span class="rvts29"></span><br/><span class="rvts29">Ending Characters are part of a Profile and are modified on in the Profile form shown in </span><a class="rvts14" href="EndChars.html#FIG1">figure 1</a><span class="rvts29">.</span><br/><span class="rvts29"></span><br/><a name="FIG1"></a>
+<span class="rvts31">Figure 1:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image Profile edit.png"></p>
+<h3 class="rvps7"><span class="rvts0"><span class="rvts24">Related</span></span></h3>
+<p class="rvps2"><a class="rvts14" href="Profile1.html">Profile</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2014 - 2017 by Paul Moss. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

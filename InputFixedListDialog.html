@@ -1,0 +1,118 @@
+﻿<html>
+	
+<head>
+	<title>Input Fixed List Dialog</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="Dialog, Replacement">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "index.html?" + sTopicUrl
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("InputFixedListDialog");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Input Fixed List Dialog</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Gui.html">Gui</a> &rsaquo;&rsaquo; <a href="Hotlist.html">Hotlist</a> &rsaquo;&rsaquo; <a href="Plugin.html">Plugin</a> &rsaquo;&rsaquo; <a href="HotstringPlugin.html">Hotstring Plugin</a> &rsaquo;&rsaquo; <a href="Replacements.html">Replacements</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Replacements.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="InputDialog.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="HotkeyPlugin.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts12">Input Fixed List Dialog</span></span></h1>
+<p class="rvps2"><span class="rvts6">Input fixed list dialog allow you to show the user a dialog with a drop down list for then to choose from as shown in </span><a class="rvts14" href="InputFixedListDialog.html#fig2">figure 2</a><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6">Click on the controls in </span><a class="rvts14" href="InputFixedListDialog.html#fig1">figure 1</a><span class="rvts6"> to get a description of what they do.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig1"></a>
+<span class="rvts13">Figure 1:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_hs_dialog_input_fixedlist_map.png" usemap="#7AD3B510F1A24A88B1A9A662D55A2910"><map name="7AD3B510F1A24A88B1A9A662D55A2910"><area shape="rect" coords="725,104,747,195" alt="Delete" title="Delete" href="InputFixedListDialog.html#dialog_list_del"><area shape="rect" coords="394,105,446,195" alt="Default" title="Default" href="InputFixedListDialog.html#dialog_list_default"><area shape="rect" coords="13,86,324,105" alt="Placeholder" title="Placeholder" href="InputFixedListDialog.html#placeholder"><area shape="rect" coords="14,110,326,132" alt="Dialog Title" title="Dialog Title" href="InputFixedListDialog.html#dialog_title"><area shape="rect" coords="138,146,327,304" alt="Dialog Text" title="Dialog Text" href="InputFixedListDialog.html#dialog_text"><area shape="rect" coords="11,145,138,161" alt="Dialog Text" title="Dialog Text" href="InputFixedListDialog.html#dialog_text"><area shape="rect" coords="15,57,41,78" alt="Exit" title="Exit" href="InputFixedListDialog.html#dialog_exit"><area shape="rect" coords="44,57,62,77" alt="Save" title="Save" href="InputFixedListDialog.html#dialog_save"><area shape="rect" coords="397,195,746,218" alt="" title="" href="InputFixedListDialog.html#dialog_list_new"><area shape="rect" coords="446,106,723,194" alt="" title="" href="InputFixedListDialog.html#dialog_list_value"></map></p>
+<p class="rvps2"><a name="fig2"></a>
+<span class="rvts13">Figure 2:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_hs_dialog_input_fixedlist_popup.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="placeholder"></a>
+<span class="rvts6">Placeholder - is the token used in your code that is to be replaced by the dialog</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="dialog_title"></a>
+<span class="rvts6">Dialog Title &nbsp;- is the title displayed in the dialog..</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="dialog_text"></a>
+<span class="rvts6">Dialog Text - is the description instructing the user.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="dialog_list_default"></a>
+<span class="rvts6">List Default - If selected the value will be the initially display value when the dialog is displayed. Only one value in a list can be marked as default.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="dialog_list_value"></a>
+<span class="rvts6">List Value - the value if the item in the list. The list value is also the value the placeholder is replaced with.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="dialog_list_new"></a>
+<span class="rvts6">List Add New - to add a new value to the list just click in the last row and type in the new value.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="dialog_list_del"></a>
+<img alt="" style="padding : 1px;" src="lib/Image_grid_btn_del.png"><span class="rvts6">List Delete - Deletes a value from the list.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="dialog_save"></a>
+<img alt="" style="padding : 1px;" src="lib/Image_icon_save.png"><span class="rvts6">Save - Saves the changes to the Dialog values</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="dialog_exit"></a>
+<img alt="" style="padding : 1px;" src="lib/Image_Icon_exit.png"><span class="rvts6">Exit - Exits the dialog edit window without saving.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2014 - 2017 by Paul Moss. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

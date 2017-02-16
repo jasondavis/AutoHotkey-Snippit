@@ -1,0 +1,107 @@
+﻿<html>
+	
+<head>
+	<title>Welcome</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "index.html?" + sTopicUrl
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Welcome");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Welcome</h1>
+				
+				</div>
+			<div id="topic_header_nav">
+				<a href="Gettinghelp.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts12">AutoHotkey Snippit</span></span></h1>
+<h2 class="rvps5"><span class="rvts0"><span class="rvts16">Version: </span></span><span class="rvts0"><span class="rvts16">0.7.3</span></span></h2>
+<p class="rvps2"><span class="rvts6">AutoHotkey Snippit</span><span class="rvts6"> is a Program designed with the intention of having multiple types of </span><a class="rvts14" href="HotkeyPlugin.html">Hotkeys</a><span class="rvts6">, </span><a class="rvts14" href="HotstringPlugin.html">HotStrings</a><span class="rvts6"> and </span><a class="rvts14" href="IncludePlugin.html">Include Plugins</a><span class="rvts6">, see </span><a class="rvts14" href="Welcome.html#fig1">figure 1</a><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">AutoHotkey Snippit</span><span class="rvts6"> can import/export profile with plugin of a single &nbsp;file. This make is very easy to share plugins and profiles with many users.</span><br/><span class="rvts6"></span><br/><span class="rvts6">AutoHotkey Snippit</span><span class="rvts6"> is designed using </span><a class="rvts14" href="Profile1.html">Profiles</a><span class="rvts6"> and </span><a class="rvts14" href="Plugin.html">Plugins</a><span class="rvts6">. Profiles are Generally what the plugins will apply to. </span><a class="rvts14" href="Plugin.html">Plugins</a><span class="rvts6"> are actions taken that may be taken when the </span><a class="rvts14" href="Profile1.html">Profile</a><span class="rvts6"> matches the specified condition set.</span></p>
+<p class="rvps2"><span class="rvts6"></span><br/><a class="rvts14" href="Plugin.html">Plugins</a><span class="rvts6"> may contain three flavors.</span></p>
+<ul style="text-indent: 0px; margin-left: 40px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps2"><a class="rvts14" href="HotkeyPlugin.html">Hotkeys</a><span class="rvts6"> - These are Actions that are taken when a specified hot key is pressed such as </span><span class="rvts15">Ctrl+Win+A</span><span class="rvts6"> ,</span></li>
+<li class="rvps2"><a class="rvts14" href="HotstringPlugin.html">HotStrings</a><span class="rvts6"> - These are the Actions taken when a keyboard sequence is pressed such as </span><span class="rvts15">sayhello</span><span class="rvts6"> and are often use to create text replacements for such things as auto correct.</span></li>
+<li class="rvps2"><a class="rvts14" href="IncludePlugin.html">Includes</a><span class="rvts6"> - These are custom Actions that can be anything supported by the AutoHotkey Scripting language including custom Hotkeys and HotStrings. </span><a class="rvts14" href="IncludePlugin.html">Includes</a><span class="rvts6"> are more powerful but more difficult then working with </span><a class="rvts14" href="HotkeyPlugin.html">Hotkeys</a><span class="rvts6"> and </span><a class="rvts14" href="HotstringPlugin.html">HotStrings</a><span class="rvts6">. Most if not all of your need </span><a class="rvts14" href="HotkeyPlugin.html">Hotkeys</a><span class="rvts6"> and </span><a class="rvts14" href="HotstringPlugin.html">HotStrings</a><span class="rvts6"> will probably do the job.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"></span><br/><span class="rvts6">Some Features of </span><span class="rvts6">AutoHotkey Snippit</span></p>
+<ul style="text-indent: 0px; margin-left: 40px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps2"><span class="rvts6">Create a </span><a class="rvts14" href="GlobalProfile.html">Global Profile</a><span class="rvts6"> - Profile will act on all windows except the window specifically blacklisted.</span></li>
+<li class="rvps2"><span class="rvts6">Create a </span><a class="rvts14" href="GlobalProfile.html">Local Profile</a><span class="rvts6"> - Profile will act on only the windows in the white list.</span></li>
+<li class="rvps2"><a class="rvts14" href="Import.html">Import</a><span class="rvts6"> / </span><a class="rvts14" href="Export.html">Export</a><span class="rvts6"> Snippit Install as shown in </span><a class="rvts14" href="Welcome.html#fig1">figure 1</a></li>
+<li class="rvps2"><a class="rvts14" href="Import.html">Import</a><span class="rvts6"> / </span><a class="rvts14" href="Export.html">Export</a><span class="rvts6"> Plugin into Profiles as shown in </span><a class="rvts14" href="Welcome.html#fig2">figure 2</a></li>
+<li class="rvps2"><span class="rvts6">Create one or more Individual </span><a class="rvts14" href="Plugin.html">Plugins</a><span class="rvts6"> - Plugins can be created within </span><a class="rvts14" href="Profile1.html">Profiles</a><span class="rvts6"> as demonstrated by </span><a class="rvts14" href="Welcome.html#fig1">figure 1</a><span class="rvts6">.</span></li>
+<li class="rvps2"><a class="rvts14" href="Plugin.html">Plugins</a><span class="rvts6"> may be optionally disabled within a </span><a class="rvts14" href="Profile1.html">Profile</a><span class="rvts6"> - Great for plugins within a Profile that you only use occasionally.</span></li>
+<li class="rvps2"><a class="rvts14" href="Plugin.html">Plugins</a><span class="rvts6"> may be deleted</span></li>
+<li class="rvps2"><a class="rvts14" href="Plugin.html">Plugins</a><span class="rvts6"> may be </span><a class="rvts14" href="CopyMove.html">copied</a><span class="rvts6"> to another </span><a class="rvts14" href="Profile1.html">Profile</a></li>
+<li class="rvps2"><a class="rvts14" href="Plugin.html">Plugins</a><span class="rvts6"> may be </span><a class="rvts14" href="CopyMove.html">Moved</a><span class="rvts6"> to another </span><a class="rvts14" href="Profile1.html">Profile</a></li>
+<li class="rvps2"><a class="rvts14" href="Plugin.html">Plugins</a><span class="rvts6"> may disable </span><a class="rvts14" href="HotkeyPlugin.html">Hotkeys</a><span class="rvts6">, </span><a class="rvts14" href="HotstringPlugin.html">HotStrings</a><span class="rvts6"> and </span><a class="rvts14" href="IncludePlugin.html">Includes</a><span class="rvts6"> individually.</span></li>
+<li class="rvps2"><a class="rvts14" href="Data.html">Data</a><span class="rvts6"> may be part of a plugin to enhance is capability.</span></li>
+<li class="rvps2"><a class="rvts14" href="Data.html">Data</a><span class="rvts6"> can be included as Text or Binary</span></li>
+</ul>
+<p class="rvps2"><span class="rvts11"></span><br/><a name="fig1"></a>
+<span class="rvts13">Figure 1:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Map_Snippit_Install.png" usemap="#74B10A6C2605473ABF16ECE849F55402"><map name="74B10A6C2605473ABF16ECE849F55402"><area shape="rect" coords="337,33,390,66" alt="" title="" href="Profile1.html"><area shape="rect" coords="165,156,215,189" alt="" title="" href="Plugin.html"><area shape="rect" coords="525,156,568,187" alt="" title="" href="Plugin.html"><area shape="rect" coords="44,271,108,300" alt="" title="" href="HotstringPlugin.html"><area shape="rect" coords="407,270,466,304" alt="" title="" href="HotstringPlugin.html"><area shape="rect" coords="124,271,183,303" alt="" title="" href="HotkeyPlugin.html"><area shape="rect" coords="483,271,542,304" alt="" title="" href="HotkeyPlugin.html"><area shape="rect" coords="198,270,256,300" alt="" title="" href="IncludePlugin.html"><area shape="rect" coords="556,271,615,301" alt="" title="" href="IncludePlugin.html"><area shape="rect" coords="273,270,335,301" alt="" title="" href="Data.html"><area shape="rect" coords="631,271,692,303" alt="" title="" href="Data.html"></map></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig2"></a>
+<span class="rvts13">Figure 2:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/map_graph_plugin.png" usemap="#D04297A4C231400DA26C0F5352307EDB"><map name="D04297A4C231400DA26C0F5352307EDB"><area shape="rect" coords="197,18,264,60" alt="" title="" href="Plugin.html"><area shape="rect" coords="14,188,110,230" alt="" title="" href="HotstringPlugin.html"><area shape="rect" coords="127,188,217,230" alt="" title="" href="HotkeyPlugin.html"><area shape="rect" coords="242,188,330,230" alt="" title="" href="IncludePlugin.html"><area shape="rect" coords="354,188,441,230" alt="" title="" href="Data.html"></map></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2014 - 2017 by Paul Moss. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

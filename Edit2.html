@@ -1,0 +1,104 @@
+﻿<html>
+	
+<head>
+	<title>Edit</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="Edit, Hotkey">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "index.html?" + sTopicUrl
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Edit2");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Edit</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Gui.html">Gui</a> &rsaquo;&rsaquo; <a href="Hotlist.html">Hotlist</a> &rsaquo;&rsaquo; <a href="Plugin.html">Plugin</a> &rsaquo;&rsaquo; <a href="HotkeyPlugin.html">Hotkey Plugin</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="HotkeyPlugin.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="New1.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Delete.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts12">Hotkey Edit</span></span></h1>
+<p class="rvps2"><span class="rvts6">Editing a Hotkey from the Hotlist &nbsp;can be done by Selecting a Plugin that contain the Hotkey to edit and then clicking on the </span><span class="rvts19">Edit Selected Plugin</span><span class="rvts6"> Option as shown in </span><a class="rvts14" href="Edit2.html#fig1">figure 1</a><span class="rvts6"> or by right clicking on a hotkey in the list and choosing edit as show in </span><a class="rvts14" href="Edit2.html#fig2">figure 2</a><span class="rvts6">. This will take you to the Hotkeys edit screen as shown in </span><a class="rvts14" href="Edit2.html#fig4">figure 4</a><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts19">Note</span><span class="rvts6">: If edit button is clicked with no item selected in the list then your will start on the Plugin window on the Main tab as shown in </span><a class="rvts14" href="Edit2.html#fig3">figure 3</a><span class="rvts6">. Click on the Hotkeys tab and then </span><a class="rvts14" href="NavigationRecordControl.html">navigate</a><span class="rvts6"> to the hotkey you want to edit.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig1"></a>
+<span class="rvts13">Figure 1:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_hotlist_plugin_selected_edit_callout.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig2"></a>
+<span class="rvts13">Figure 2:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_hotlist_plugin_selected_context_menu.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig3"></a>
+<span class="rvts13">Figure 3:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_Plugins_Main_torn.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig4"></a>
+<span class="rvts13">Figure 4:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_hotlist_plugin_bluetooth.png"></p>
+<h3 class="rvps7"><span class="rvts0"><span class="rvts24">Related</span></span></h3>
+<p class="rvps2"><a class="rvts14" href="HotstringPlugin.html">Hotkey Plugin</a></p>
+<p class="rvps2"><a class="rvts14" href="New1.html">Hotkey New</a></p>
+<p class="rvps2"><a class="rvts14" href="Delete.html">Hotkey Delete</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2014 - 2017 by Paul Moss. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

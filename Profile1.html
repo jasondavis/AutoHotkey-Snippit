@@ -1,0 +1,100 @@
+﻿<html>
+	
+<head>
+	<title>Profile</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "index.html?" + sTopicUrl
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Profile1");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Profile</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Gui.html">Gui</a> &rsaquo;&rsaquo; <a href="Hotlist.html">Hotlist</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Hotlist.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Hotlist.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="NewProfile.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts12">Profile</span></span></h1>
+<p class="rvps2"><span class="rvts6">A Profile is a group of settings that determine how the Plugins can interact with the system.</span><br/><span class="rvts6">The Profile mainly consist of </span><a class="rvts14" href="GlobalProfile.html">Global</a><span class="rvts6"> option, </span><a class="rvts14" href="EndChars.html">End Chars</a><span class="rvts6"> and </span><a class="rvts14" href="WindowsTab.html">Windows</a><span class="rvts6">.</span></p>
+<ol style="text-indent: 0px; margin-left: 40px; list-style-position: outside; list-style-type: decimal;">
+<li value="1" class="rvps2"><a class="rvts14" href="GlobalProfile.html">Global</a><span class="rvts6"> options affects if the profile is system wide or localized to selected windows.</span></li>
+<li value="2" class="rvps2"><a class="rvts14" href="EndChars.html">End Chars</a><span class="rvts6"> affect how any Hotstring's are triggered.</span></li>
+<li value="3" class="rvps2"><a class="rvts14" href="WindowsTab.html">Windows</a><span class="rvts6"> decide what window the profile is applied to </span><span class="rvts22">( if not Global)</span><span class="rvts6"> or Not applied to </span><span class="rvts22">( if Global)</span><span class="rvts6">.</span></li>
+</ol>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a class="rvts14" href="Profile1.html#fig2">Figure 2</a><span class="rvts6"> show a diagram of how profile contain plugins.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="FIG1"></a>
+<span class="rvts21">Figure 1:</span></p>
+<p class="rvps2"><img alt="Profile_new.png" style="vertical-align: text-bottom;" src="lib/Image Profile new.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig2"></a>
+<span class="rvts13">Figure 2:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Map_Snippit_Install.png" usemap="#74B10A6C2605473ABF16ECE849F55402"><map name="74B10A6C2605473ABF16ECE849F55402"><area shape="rect" coords="337,33,390,66" alt="" title="" href="Profile1.html"><area shape="rect" coords="165,156,215,189" alt="" title="" href="Plugin.html"><area shape="rect" coords="525,156,568,187" alt="" title="" href="Plugin.html"><area shape="rect" coords="44,271,108,300" alt="" title="" href="HotstringPlugin.html"><area shape="rect" coords="407,270,466,304" alt="" title="" href="HotstringPlugin.html"><area shape="rect" coords="124,271,183,303" alt="" title="" href="HotkeyPlugin.html"><area shape="rect" coords="483,271,542,304" alt="" title="" href="HotkeyPlugin.html"><area shape="rect" coords="198,270,256,300" alt="" title="" href="IncludePlugin.html"><area shape="rect" coords="556,271,615,301" alt="" title="" href="IncludePlugin.html"><area shape="rect" coords="273,270,335,301" alt="" title="" href="Data.html"><area shape="rect" coords="631,271,692,303" alt="" title="" href="Data.html"></map></p>
+<h3 class="rvps7"><span class="rvts0"><span class="rvts24">Related</span></span></h3>
+<p class="rvps2"><a class="rvts14" href="NewProfile.html">New Profile</a><br/><a class="rvts14" href="EditProfile.html">Edit Profile</a><br/><span class="rvts6"><br/></span></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2014 - 2017 by Paul Moss. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

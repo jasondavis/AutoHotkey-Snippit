@@ -1,0 +1,99 @@
+﻿<html>
+	
+<head>
+	<title>Tray</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "index.html?" + sTopicUrl
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Tray");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Tray</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Gui.html">Gui</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Gui.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="WindowSpy.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="TrayMenu.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts12">AutoHotKey Snippit Tray</span></span></h1>
+<p class="rvps2"><span class="rvts6">AutoHotkey Snippit</span><span class="rvts6"> must be running in the </span><a class="rvts20" href="http://searchenterprisedesktop.techtarget.com/definition/system-tray" target="_blank">System Tray</a><span class="rvts6"> for </span><a class="rvts14" href="Hotkeys.html">Hotkeys</a><span class="rvts6"> and </span><a class="rvts14" href="Hotstrings.html">HotString</a><span class="rvts6"> to be active.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">When </span><span class="rvts6">AutoHotkey Snippit</span><span class="rvts6"> is active in the system tray your will see the following tray icon </span><img alt="" style="padding : 1px;" src="lib/Image_icon_tray.png"><span class="rvts6">. Right clicking the the </span><img alt="" style="padding : 1px;" src="lib/Image_icon_tray.png"><span class="rvts6">icon will give your other options as show in </span><a class="rvts14" href="Tray.html#fig2">figure 2</a><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">If </span><span class="rvts6">AutoHotkey Snippit</span><span class="rvts6"> is not running in </span><a class="rvts20" href="http://searchenterprisedesktop.techtarget.com/definition/system-tray" target="_blank">System Tray</a><span class="rvts6"> the &nbsp;you can launch it form Windows Start Menu by clicking on </span><span class="rvts6">AutoHotkey Snippit</span><span class="rvts6"> as shown in </span><a class="rvts14" href="Tray.html#fig1">figure 1</a><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig1"></a>
+<span class="rvts13">Figure 1:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_start_menu_ahk_snippit.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig2"></a>
+<span class="rvts13">Figure 2:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_TrayMenu_map.png" usemap="#2D5521760D45424D91619855577AB803"><map name="2D5521760D45424D91619855577AB803"><area shape="rect" coords="42,4,185,23" alt="Launch Hotlist" title="Launch Hotlist" href="TrayMenu.html#mnu_list_manager"><area shape="rect" coords="42,26,186,46" alt="Launch Swap Profile" title="Launch Swap Profile" href="TrayMenu.html#mnu_swap"><area shape="rect" coords="39,53,187,76" alt="Launch Window Spy" title="Launch Window Spy" href="TrayMenu.html#mnu_window_spy"><area shape="rect" coords="40,85,182,106" alt="Reload" title="Reload" href="TrayMenu.html#mnu_reload"><area shape="rect" coords="40,107,185,129" alt="" title="" href="TrayMenu.html#mnu_pause"><area shape="rect" coords="41,131,185,148" alt="Suspend" title="Suspend" href="TrayMenu.html#mnu_suspend"><area shape="rect" coords="41,152,187,177" alt="Help" title="Help" href="TrayMenu.html#mnu_help"><area shape="rect" coords="40,183,185,210" alt="Buy us a coffee" title="Buy us a coffee" href="TrayMenu.html#mnu_donate"><area shape="rect" coords="40,214,187,238" alt="Exit" title="Exit" href="TrayMenu.html#mnu_exit"></map></p>
+<h3 class="rvps7"><span class="rvts0"><span class="rvts24">Related</span></span></h3>
+<p class="rvps2"><a class="rvts14" href="Gui.html">Gui</a></p>
+<p class="rvps2"><a class="rvts14" href="TrayMenu.html">Tray Menu</a></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2014 - 2017 by Paul Moss. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

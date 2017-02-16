@@ -1,0 +1,123 @@
+﻿<html>
+	
+<head>
+	<title>Tray Menu</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "index.html?" + sTopicUrl
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("TrayMenu");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Tray Menu</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Gui.html">Gui</a> &rsaquo;&rsaquo; <a href="Tray.html">Tray</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Tray.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Tray.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="NavigationRecordControl.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts12">AutoHotkey Snnippit Tray Menu</span></span></h1>
+<p class="rvps2"><span class="rvts6">Menu item of </span><a class="rvts14" href="TrayMenu.html#fig1">figure 1</a><span class="rvts6"> are described </span><a class="rvts14" href="TrayMenu.html#mnu_list_manager">below</a><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig1"></a>
+<span class="rvts13">Figure 1:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_TrayMenu_map.png" usemap="#2D5521760D45424D91619855577AB803"><map name="2D5521760D45424D91619855577AB803"><area shape="rect" coords="42,4,185,23" alt="Launch Hotlist" title="Launch Hotlist" href="TrayMenu.html#mnu_list_manager"><area shape="rect" coords="42,26,186,46" alt="Launch Swap Profile" title="Launch Swap Profile" href="TrayMenu.html#mnu_swap"><area shape="rect" coords="39,53,187,76" alt="Launch Window Spy" title="Launch Window Spy" href="TrayMenu.html#mnu_window_spy"><area shape="rect" coords="40,85,182,106" alt="Reload" title="Reload" href="TrayMenu.html#mnu_reload"><area shape="rect" coords="40,107,185,129" alt="" title="" href="TrayMenu.html#mnu_pause"><area shape="rect" coords="41,131,185,148" alt="Suspend" title="Suspend" href="TrayMenu.html#mnu_suspend"><area shape="rect" coords="41,152,187,177" alt="Help" title="Help" href="TrayMenu.html#mnu_help"><area shape="rect" coords="40,183,185,210" alt="Buy us a coffee" title="Buy us a coffee" href="TrayMenu.html#mnu_donate"><area shape="rect" coords="40,214,187,238" alt="Exit" title="Exit" href="TrayMenu.html#mnu_exit"></map></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="mnu_list_manager"></a>
+<span class="rvts19">List Manager</span><span class="rvts6"> - Launches the </span><a class="rvts14" href="Hotlist.html">Hotlist</a><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="mnu_swap"></a>
+<span class="rvts19">Windows Global</span><span class="rvts6"> - This menu will change name depending on the </span><a class="rvts14" href="Profile1.html">profile</a><span class="rvts6"> that is currently active. Clicking this menu item will launch </span><a class="rvts14" href="ProfileSwap.html">Profile Swap</a><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="mnu_window_spy"></a>
+<span class="rvts19">Window Spy</span><span class="rvts6"> - Launch </span><a class="rvts14" href="WindowSpy.html">Window Spy</a><span class="rvts6"> Application.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="mnu_reload"></a>
+<span class="rvts19">Reload</span><span class="rvts6"> - This menu item will reload </span><span class="rvts6">AutoHotkey Snippit</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="mnu_pause"></a>
+<span class="rvts19">Pause</span><span class="rvts6"> - Pauses or un-pasues </span><span class="rvts6">AutoHotkey Snippit</span><span class="rvts6">. Turning on pause will freeze the </span><a class="rvts20" href="https://autohotkey.com/docs/misc/Threads.htm" target="_blank">current thread</a><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="mnu_suspend"></a>
+<span class="rvts19">Suspend</span><span class="rvts6"> - Suspends or Resumes all </span><a class="rvts14" href="Hotkeys.html">hotkeys</a><span class="rvts6"> and </span><a class="rvts14" href="Hotstrings.html">hotstrings</a><span class="rvts6">. There may be some exceptions. See </span><a class="rvts20" href="https://autohotkey.com/docs/commands/Suspend.htm" target="_blank">AutoHotkey Documentation</a><span class="rvts6"> for more information on Suspend.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="mnu_help"></a>
+<span class="rvts19">Help</span><span class="rvts6"> - Launches this help file.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="mnu_donate"></a>
+<span class="rvts19">Donate</span><span class="rvts6"> - Buy some developer coffee.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="mnu_exit"></a>
+<span class="rvts19">Exit</span><span class="rvts6"> - Exits </span><span class="rvts6">AutoHotkey Snippit</span><span class="rvts6"> which will stop all </span><a class="rvts14" href="Hotkeys.html">hotkeys</a><span class="rvts6"> and </span><a class="rvts14" href="Hotstrings.html">hotstrings</a><span class="rvts6">. If </span><span class="rvts6">AutoHotkey Snippit</span><span class="rvts6"> is not running you can still run </span><a class="rvts14" href="ProfileSwap.html">Profile Swap</a><span class="rvts6"> or </span><a class="rvts14" href="Hotlist.html">Hotlist</a><span class="rvts6"> from the start menu. Any changes made will take effect next time </span><span class="rvts6">AutoHotkey Snippit</span><span class="rvts6"> is started.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps7"><a name="remarks"></a>
+<span class="rvts0"><span class="rvts24">Remarks</span></span></h3>
+<p class="rvps2"><span class="rvts6">Both </span><a class="rvts14" href="ProfileSwap.html">Profile Swap</a><span class="rvts6"> and </span><a class="rvts14" href="Hotlist.html">Hotlist</a><span class="rvts6"> can still be run if </span><span class="rvts6">AutoHotkey Snippit</span><span class="rvts6"> is not running, </span><span class="rvts19">Paused</span><span class="rvts6">, or </span><span class="rvts19">Suspended</span><span class="rvts6">. However if </span><span class="rvts6">AutoHotkey Snippit</span><span class="rvts6"> is running it may be restarted after making changes with </span><a class="rvts14" href="ProfileSwap.html">Profile Swap</a><span class="rvts6"> or </span><a class="rvts14" href="Hotlist.html">Hotlist</a><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps7"><a name="related"></a>
+<span class="rvts0"><span class="rvts24">Related</span></span></h3>
+<p class="rvps2"><a class="rvts14" href="Tray.html">Tray</a></p>
+<p class="rvps2"><a class="rvts14" href="ProfileSwap.html">Profile Swap</a></p>
+<p class="rvps2"><a class="rvts14" href="Hotlist.html">Hotlist</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2014 - 2017 by Paul Moss. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

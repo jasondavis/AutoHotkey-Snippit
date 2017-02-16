@@ -1,0 +1,134 @@
+﻿<html>
+	
+<head>
+	<title>Replacements</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="Replacement">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "index.html?" + sTopicUrl
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Replacements");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Replacements</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Gui.html">Gui</a> &rsaquo;&rsaquo; <a href="Hotlist.html">Hotlist</a> &rsaquo;&rsaquo; <a href="Plugin.html">Plugin</a> &rsaquo;&rsaquo; <a href="HotstringPlugin.html">Hotstring Plugin</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="HotstringPlugin.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Delete1.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="InputDialog.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts12">Replacements</span></span></h1>
+<p class="rvps2"><span class="rvts6">Replacements are a way to insert tokens into your hotstring code and have a dialog popup and ask the user to input some value before the hotstring runs the code.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">The two kinks of replacements that can be use are </span><a class="rvts14" href="InputDialog.html">Input Dialog</a><span class="rvts6"> and </span><a class="rvts14" href="InputFixedListDialog.html">Input Fixed List Dialog</a><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="vertical-align: middle; padding : 1px;" src="lib/Image_icon_input_dialog.png"><span class="rvts6">Click the Add Input Dialog as show in </span><a class="rvts14" href="Replacements.html#fig1">figure 1</a><span class="rvts6"> to add a new Input Dialog.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="vertical-align: middle; padding : 1px;" src="lib/Image_icon_input_dialog_fixedlist.png"><span class="rvts6">Click the Add Fixed List Dialog as show in </span><a class="rvts14" href="Replacements.html#fig1">figure 1</a><span class="rvts6"> to add a new Input Fixed List Dialog.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_icon_Grid_btn_edit.png"><span class="rvts6"> Click the Edit icon in the grid as show in </span><a class="rvts14" href="Replacements.html#fig1">figure 1 </a><span class="rvts6">to edit an existing Dialog.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="vertical-align: middle; padding : 1px;" src="lib/Image_grid_btn_del.png"><span class="rvts6">Click the Delete icon in the grid as show in </span><a class="rvts14" href="Replacements.html#fig1">figure 1</a><span class="rvts6"> to delete an existing Dialog.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h2 class="rvps5"><span class="rvts0"><span class="rvts16">Walk-through</span></span></h2>
+<p class="rvps2"><span class="rvts6">Walk through creating Full Property hotstring as demonstrated in </span><a class="rvts14" href="Replacements.html#fig6">figure 6</a><span class="rvts6">.</span></p>
+<p class="rvps12"><a class="rvts14" href="Replacements.html#fig2">Figure 2</a><span class="rvts6"> show the basic setup for the hotstring. Notice the </span><span class="rvts15">{0} {1} {2}</span><span class="rvts6"> tokens in the Replacement field of </span><a class="rvts14" href="Replacements.html#fig2">figure 2</a><span class="rvts6">. These tokes are going to be our placeholder used in our dialogs as shown in</span><a class="rvts14" href="Replacements.html#fig3"> figure 3</a><span class="rvts6">, </span><a class="rvts14" href="Replacements.html#fig4">figure 4</a><span class="rvts6"> and </span><a class="rvts14" href="Replacements.html#fig5">figure 5</a><span class="rvts6">.</span></p>
+<p class="rvps12"><span class="rvts6"><br/></span></p>
+<p class="rvps12"><span class="rvts6">After setting up the properties as show in </span><a class="rvts14" href="Replacements.html#fig2">figure 2</a><span class="rvts6"> for the </span><span class="rvts15">pp</span><span class="rvts6"> hotstring we will move on to creating the dialogs for the hotstring as shown in </span><a class="rvts14" href="Replacements.html#fig1">figure 1</a><span class="rvts6">.</span></p>
+<p class="rvps12"><span class="rvts6"><br/></span></p>
+<p class="rvps12"><span class="rvts6">First we will create the </span><a class="rvts14" href="InputFixedListDialog.html">Input Fixed List Dialog</a><span class="rvts6"> </span><span class="rvts6">for Accessor as shown in </span><a class="rvts14" href="Replacements.html#fig3">figure 3</a><span class="rvts6">. Input the values as show in </span><a class="rvts14" href="Replacements.html#fig3">figure 3</a><span class="rvts6"> and click the </span><img alt="" style="padding : 1px;" src="lib/Image_icon_save.png"><span class="rvts6">save button.</span></p>
+<p class="rvps12"><span class="rvts6"><br/></span></p>
+<p class="rvps12"><span class="rvts6">Next we will create the </span><a class="rvts14" href="InputDialog.html">Input Dialog</a><span class="rvts6"> for the Property Type as shown in </span><a class="rvts14" href="Replacements.html#fig4">figure 4</a><span class="rvts6">. &nbsp;Input the values as show in</span><a class="rvts14" href="Replacements.html#fig4"> figure 4</a><span class="rvts6"> and click the </span><img alt="" style="padding : 1px;" src="lib/Image_icon_save.png"><span class="rvts6">save button.</span></p>
+<p class="rvps12"><span class="rvts6"><br/></span></p>
+<p class="rvps12"><span class="rvts6">And for the last </span><a class="rvts14" href="InputDialog.html">Input Dialog</a><span class="rvts6"> follow &nbsp;the previous step and input the values as shown in </span><a class="rvts14" href="Replacements.html#fig5">figure 5</a><span class="rvts6">. Your replacements should now look like figure 1. </span><img alt="" style="padding : 1px;" src="lib/Image_icon_save.png"><span class="rvts6"> Save your plugin and test your results.</span></p>
+<p class="rvps12"><span class="rvts6"><br/></span></p>
+<p class="rvps12"><span class="rvts19">Note:</span><span class="rvts6"> Your profile must be Active to test your hotstring.</span></p>
+<p class="rvps12"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig1"></a>
+<span class="rvts13">Figure 1:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_Plugin_replacements.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig2"></a>
+<span class="rvts13">Figure 2:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_hs_full_property_edit.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig3"></a>
+<span class="rvts13">Figure 3:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_hs_dialog_input_fixedlist.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig4"></a>
+<span class="rvts13">Figure 4:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_hs_dialog_input.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig5"></a>
+<span class="rvts13">Figure 5:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_hs_dialog_input_dialog_property_name.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig6"></a>
+<span class="rvts13">Figure 6:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_c_sharp_pp.gif"></p>
+<p class="rvps2"><span class="rvts13"><br/></span></p>
+<h3 class="rvps7"><span class="rvts0"><span class="rvts41">Related</span></span></h3>
+<p class="rvps2"><a class="rvts14" href="InputDialog.html">Input Dialog</a></p>
+<p class="rvps2"><a class="rvts14" href="InputFixedListDialog.html">Input Fixed List Dialog</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2014 - 2017 by Paul Moss. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

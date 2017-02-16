@@ -1,0 +1,97 @@
+﻿<html>
+	
+<head>
+	<title>New</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="New, Hotstring">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "index.html?" + sTopicUrl
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("New");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">New</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Gui.html">Gui</a> &rsaquo;&rsaquo; <a href="Hotlist.html">Hotlist</a> &rsaquo;&rsaquo; <a href="Plugin.html">Plugin</a> &rsaquo;&rsaquo; <a href="HotstringPlugin.html">Hotstring Plugin</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="HotstringPlugin.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="HotstringPlugin.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Edit.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts12">Hotstring New</span></span></h1>
+<p class="rvps14"><span class="rvts34"></span><br/><span class="rvts35">Creating a new hotstring is done by editing an existing plugin or creating a </span><a class="rvts37" href="Plugin.html">new plugin</a><span class="rvts35">. Click on the add new button </span><a href="NavigationRecordControl.html#nav_new"><img alt="" style="padding : 1px;" src="lib/Image Nav Add new.png"></a><span class="rvts35"> of the Plugin window on the HotStrings Tab as shown in </span><a class="rvts37" href="New.html#fig1">figure 1</a><span class="rvts35">. An example is show in </span><a class="rvts37" href="New.html#fig2">figure 2</a><span class="rvts35"> that when you type </span><span class="rvts40">sf</span><span class="rvts35"> at the cursor followed by an </span><a class="rvts37" href="EndChars.html">End Char</a><span class="rvts35"> it will be replaced with </span><span class="rvts39">MfString.Format()</span><span class="rvts35">. After you save the new hotstring it will show up in the profile as shown in </span><a class="rvts37" href="New.html#FIG3">figure 3</a><span class="rvts35">. </span><a class="rvts37" href="New.html#fig4">Figure 4</a><span class="rvts35"> Show the hotstring in action.</span></p>
+<p class="rvps14"><span class="rvts35"></span><br/><span class="rvts35"></span><br/><span class="rvts35">Note the Send Keys is set to </span><span class="rvts40">{left}</span><span class="rvts35"> this will cause cursor to be set to the center of the </span><span class="rvts40">()</span><span class="rvts35"> portion of the </span><span class="rvts40">MfString.Format()</span><span class="rvts35">. In Effect the </span><span class="rvts40">{left}</span><span class="rvts35"> sends the left arrow key after the Hotstring is finished. For more on keys that can be sent see the </span><a class="rvts38" href="https://autohotkey.com/docs/commands/Send.htm" target="_blank">AutoHotkey documentation</a><span class="rvts35">.</span><br/><span class="rvts34"></span><br/><a name="FIG1"></a>
+<span class="rvts36">Figure 1:</span></p>
+<p class="rvps2"><img alt="plugin_hotstring_new_btn.png" style="vertical-align: text-bottom;" src="lib/Image Plugin hotstring new btn.png"><br/><span class="rvts11"></span><br/><a name="FIG2"></a>
+<span class="rvts21">Figure 2:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Map_Hotstring_Options.png" usemap="#2956A4A384FE45BFB602EBAD938ECA06"><map name="2956A4A384FE45BFB602EBAD938ECA06"><area shape="rect" coords="18,130,385,151" alt="Name" title="Name" href="HotstringPlugin.html#NAME"><area shape="rect" coords="19,153,149,169" alt="Case Sensitive" title="Case Sensitive" href="HotstringPlugin.html#CASE"><area shape="rect" coords="18,176,144,193" alt="Trigger Inside" title="Trigger Inside" href="HotstringPlugin.html#TRIGGER_INSIDE"><area shape="rect" coords="21,200,148,217" alt="Omit End Char" title="Omit End Char" href="HotstringPlugin.html#OMIT_END_CHAR"><area shape="rect" coords="18,223,145,242" alt="No Backspace" title="No Backspace" href="HotstringPlugin.html#NO_BACKSPACE"><area shape="rect" coords="18,249,146,267" alt="" title="" href="HotstringPlugin.html#ENABLED"><area shape="rect" coords="18,273,147,289" alt="" title="" href="HotstringPlugin.html#FORCE_CLEAR"><area shape="rect" coords="160,153,290,169" alt="" title="" href="HotstringPlugin.html#SEND_RAW"><area shape="rect" coords="160,176,287,193" alt="Reset Reconizer" title="Reset Reconizer" href="HotstringPlugin.html#RESET_RECOGNIZER"><area shape="rect" coords="160,202,381,223" alt="Send Selection" title="Send Selection" href="HotstringPlugin.html#SEND"><area shape="rect" coords="160,226,381,247" alt="Hotstring" title="Hotstring" href="HotstringPlugin.html#HOTSTRING"><area shape="rect" coords="160,250,289,265" alt="Tabify" title="Tabify" href="HotstringPlugin.html#TABIFY"><area shape="rect" coords="116,299,377,514" alt="Description" title="Description" href="HotstringPlugin.html#DESCRIPTION"><area shape="rect" coords="18,296,77,314" alt="Description" title="Description" href="HotstringPlugin.html#DESCRIPTION"><area shape="rect" coords="412,128,776,148" alt="Category" title="Category" href="HotstringPlugin.html#CATEGORY"><area shape="rect" coords="412,154,778,172" alt="Send Keys" title="Send Keys" href="HotstringPlugin.html#SEND"><area shape="rect" coords="412,176,778,200" alt="Type Selection" title="Type Selection" href="HotstringPlugin.html#TYPE"><area shape="rect" coords="507,200,780,513" alt="Replacement" title="Replacement" href="HotstringPlugin.html#REPLACEMENT"><area shape="rect" coords="412,202,490,220" alt="Replacement" title="Replacement" href="HotstringPlugin.html#REPLACEMENT"><area shape="rect" coords="277,55,305,82" alt="Delete" title="Delete" href="NavigationRecordControl.html#Nav Delete"><area shape="rect" coords="64,56,84,80" alt="First" title="First" href="NavigationRecordControl.html#nav_first"><area shape="rect" coords="252,56,276,79" alt="Add New" title="Add New" href="NavigationRecordControl.html#nav_new"><area shape="rect" coords="88,55,106,79" alt="Previous" title="Previous" href="NavigationRecordControl.html#nav_prev"><area shape="rect" coords="224,56,250,80" alt="Last" title="Last" href="NavigationRecordControl.html#nav_last"><area shape="rect" coords="199,54,220,80" alt="Next" title="Next" href="NavigationRecordControl.html#nav_next"><area shape="rect" coords="111,54,193,80" alt="Go To" title="Go To" href="NavigationRecordControl.html#nav_textbox"><area shape="rect" coords="56,104,135,123" alt="Replacements Tab" title="Replacements Tab" href="Replacements.html"><area shape="rect" coords="51,82,93,100" alt="Hotkeys Tab" title="Hotkeys Tab" href="HotkeyPlugin.html"><area shape="rect" coords="163,81,206,104" alt="Includes" title="Includes" href="IncludePlugin.html"><area shape="rect" coords="9,82,45,101" alt="Main" title="Main" href="Plugin.html"><area shape="rect" coords="38,55,61,77" alt="Save" title="Save" href="Plugin.html#plugin_save"><area shape="rect" coords="14,56,35,76" alt="Exit" title="Exit" href="Plugin.html#plugin_exit"><area shape="rect" coords="210,83,248,102" alt="" title="" href="Data.html"><area shape="rect" coords="312,58,336,82" alt="Clone Object" title="Clone Object" href="CloneObject.html"></map></p>
+<p class="rvps2"><span class="rvts6"></span><br/><a name="FIG3"></a>
+<span class="rvts21">Figure 3:</span></p>
+<p class="rvps2"><img alt="hotlist_hotstring_mfstring_format_added.png" style="vertical-align: text-bottom;" src="lib/Image Hotlist hotstring mfstring format added.png"><br/><span class="rvts11"></span><br/><a name="FIG4"></a>
+<span class="rvts21">Figure 4</span><span class="rvts11">:</span></p>
+<p class="rvps2"><img alt="sf-mfstring_format.gif" style="vertical-align: text-bottom;" src="lib/Image-gif mfstring format.gif"></p>
+<h3 class="rvps7"><span class="rvts0"><span class="rvts24">Related</span></span></h3>
+<p class="rvps2"><a class="rvts14" href="HotstringPlugin.html">Hotstring Plugin</a></p>
+<p class="rvps2"><a class="rvts14" href="Edit.html">Hotstring Edit</a></p>
+<p class="rvps2"><a class="rvts14" href="Delete1.html">Hotstring Delete</a></p>
+<p class="rvps2"><a class="rvts14" href="Replacements.html">Replacements</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2014 - 2017 by Paul Moss. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

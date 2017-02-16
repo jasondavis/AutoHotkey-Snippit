@@ -1,0 +1,109 @@
+﻿<html>
+	
+<head>
+	<title>Plugin</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "index.html?" + sTopicUrl
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Plugin");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Plugin</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Gui.html">Gui</a> &rsaquo;&rsaquo; <a href="Hotlist.html">Hotlist</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Hotlist.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="WindowsTab.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="New3.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts12">Plugin</span></span></h1>
+<p class="rvps2"><span class="rvts6">There are currently three kinds of plugins, </span><a class="rvts14" href="HotstringPlugin.html">Hotstring Plugin</a><span class="rvts6">, </span><a class="rvts14" href="HotkeyPlugin.html">Hotkey Plugin</a><span class="rvts6"> and </span><a class="rvts14" href="IncludePlugin.html">Include Plugin.</a></p>
+<p class="rvps2"><span class="rvts6">Plugins also support </span><a class="rvts14" href="Data.html">Data</a><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a class="rvts14" href="Plugin.html#fig1">Figure 1</a><span class="rvts6"> shows the Main tab of a plugin. </span><a class="rvts14" href="Plugin.html#fig2">Figure 2</a><span class="rvts6"> shows a diagram of a </span><a class="rvts14" href="Profile1.html">profile</a><span class="rvts6"> containing plugins.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig1"></a>
+<span class="rvts13">Figure 1:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_plugin_new_map.png" usemap="#1F2F40D9BB5C42E3BDC7EE886CA01A06"><map name="1F2F40D9BB5C42E3BDC7EE886CA01A06"><area shape="rect" coords="50,81,96,99" alt="" title="" href="HotkeyPlugin.html"><area shape="rect" coords="100,84,158,101" alt="HotStrings" title="HotStrings" href="HotstringPlugin.html"><area shape="rect" coords="161,84,209,101" alt="Includes" title="Includes" href="IncludePlugin.html"><area shape="rect" coords="16,127,276,149" alt="" title="" href="Plugin.html#plugin_name"><area shape="rect" coords="15,154,197,176" alt="" title="" href="Plugin.html#plugin_ver"><area shape="rect" coords="17,180,112,201" alt="" title="" href="Plugin.html#plugin_enabled"><area shape="rect" coords="16,57,36,77" alt="Exit" title="Exit" href="Plugin.html#plugin_exit"><area shape="rect" coords="41,57,61,77" alt="Save" title="Save" href="Plugin.html#plugin_save"><area shape="rect" coords="213,84,250,100" alt="" title="" href="Data.html"></map></p>
+<p class="rvps2"><a name="fig2"></a>
+<span class="rvts13">Figure 2:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Map_Snippit_Install.png" usemap="#74B10A6C2605473ABF16ECE849F55402"><map name="74B10A6C2605473ABF16ECE849F55402"><area shape="rect" coords="337,33,390,66" alt="" title="" href="Profile1.html"><area shape="rect" coords="165,156,215,189" alt="" title="" href="Plugin.html"><area shape="rect" coords="525,156,568,187" alt="" title="" href="Plugin.html"><area shape="rect" coords="44,271,108,300" alt="" title="" href="HotstringPlugin.html"><area shape="rect" coords="407,270,466,304" alt="" title="" href="HotstringPlugin.html"><area shape="rect" coords="124,271,183,303" alt="" title="" href="HotkeyPlugin.html"><area shape="rect" coords="483,271,542,304" alt="" title="" href="HotkeyPlugin.html"><area shape="rect" coords="198,270,256,300" alt="" title="" href="IncludePlugin.html"><area shape="rect" coords="556,271,615,301" alt="" title="" href="IncludePlugin.html"><area shape="rect" coords="273,270,335,301" alt="" title="" href="Data.html"><area shape="rect" coords="631,271,692,303" alt="" title="" href="Data.html"></map></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="plugin_name"></a>
+<span class="rvts6">Name - The Name of the plugin</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="plugin_ver"></a>
+<span class="rvts6">Version - The version of plugin. This is important for </span><a class="rvts14" href="Import.html">import</a><span class="rvts6"> as older versions of plugin are not able to overwrite newer versions.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="plugin_enabled"></a>
+<span class="rvts6">Enabled - The enabled state of the plugin. If the plugin is disabled then the plugin will not be active in current </span><a class="rvts14" href="Profile1.html">profile</a><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="plugin_exit"></a>
+<img alt="" style="padding : 1px;" src="lib/Image_Icon_exit.png"><span class="rvts6"> Exit - Exits the profile without saving</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="plugin_save"></a>
+<img alt="" style="padding : 1px;" src="lib/Image_icon_save.png"><span class="rvts6"> Save - Save any changes to the profile and exits the window.</span><br/><span class="rvts11"><br/></span></p>
+<h3 class="rvps7"><span class="rvts0"><span class="rvts24">Related</span></span></h3>
+<p class="rvps2"><a class="rvts14" href="New3.html">New Plugin</a><span class="rvts6">, </span><a class="rvts14" href="Edit1.html">Edit Plugin</a><span class="rvts6">, </span><a class="rvts14" href="HotstringPlugin.html">Hotstring Plugin</a><span class="rvts6">, </span><a class="rvts14" href="HotkeyPlugin.html">Hotkey Plugin</a><span class="rvts6"> and </span><a class="rvts14" href="IncludePlugin.html">Include Plugin</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2014 - 2017 by Paul Moss. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

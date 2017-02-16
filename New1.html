@@ -1,0 +1,102 @@
+﻿<html>
+	
+<head>
+	<title>New</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="New, Hotkey">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "index.html?" + sTopicUrl
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("New1");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">New</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Gui.html">Gui</a> &rsaquo;&rsaquo; <a href="Hotlist.html">Hotlist</a> &rsaquo;&rsaquo; <a href="Plugin.html">Plugin</a> &rsaquo;&rsaquo; <a href="HotkeyPlugin.html">Hotkey Plugin</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="HotkeyPlugin.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="HotkeyPlugin.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Edit2.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts12">Hotkey New</span></span></h1>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Select the Plugin you want to add the new hotkey to. Open the Plugin Window by clicking on the Edit Button as show in </span><a class="rvts14" href="New1.html#fig1">figure 1</a><span class="rvts6">. This will open the Plugin window as shown in </span><a class="rvts14" href="New1.html#fig2">figure 2</a><span class="rvts6">. Click on the Hotkeys tab. Now click on the new button</span><a href="NavigationRecordControl.html#nav_new"><img alt="" style="padding : 1px;" src="lib/Image Nav Add new.png"></a><span class="rvts6"> as show in </span><a class="rvts14" href="New1.html#fig3">figure 3</a><span class="rvts6">. Fill out the information as then click the save button </span><img alt="" style="padding : 1px;" src="lib/Image_icon_save.png"><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig1"></a>
+<span class="rvts13">Figure 1:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_hotlist_plugin_selected_edit_callout.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig2"></a>
+<span class="rvts13">Figure 2:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_plugin_new_map.png" usemap="#1F2F40D9BB5C42E3BDC7EE886CA01A06"><map name="1F2F40D9BB5C42E3BDC7EE886CA01A06"><area shape="rect" coords="50,81,96,99" alt="" title="" href="HotkeyPlugin.html"><area shape="rect" coords="100,84,158,101" alt="HotStrings" title="HotStrings" href="HotstringPlugin.html"><area shape="rect" coords="161,84,209,101" alt="Includes" title="Includes" href="IncludePlugin.html"><area shape="rect" coords="16,127,276,149" alt="" title="" href="Plugin.html#plugin_name"><area shape="rect" coords="15,154,197,176" alt="" title="" href="Plugin.html#plugin_ver"><area shape="rect" coords="17,180,112,201" alt="" title="" href="Plugin.html#plugin_enabled"><area shape="rect" coords="16,57,36,77" alt="Exit" title="Exit" href="Plugin.html#plugin_exit"><area shape="rect" coords="41,57,61,77" alt="Save" title="Save" href="Plugin.html#plugin_save"><area shape="rect" coords="213,84,250,100" alt="" title="" href="Data.html"></map></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig3"></a>
+<span class="rvts13">Figure 3:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_hotlist_plugin_hotkey_new.png"></p>
+<h3 class="rvps7"><span class="rvts0"><span class="rvts24">Remarks</span></span></h3>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_Icon_exit.png"><span class="rvts6"> Exiting with unsaved changes then all changes will be ignored.</span></p>
+<h3 class="rvps7"><span class="rvts0"><span class="rvts24">Related</span></span></h3>
+<p class="rvps2"><a class="rvts14" href="HotstringPlugin.html">Hotkey Plugin</a></p>
+<p class="rvps2"><a class="rvts14" href="Edit2.html">Hotkey Edit</a></p>
+<p class="rvps2"><a class="rvts14" href="Delete.html">Hotkey Delete</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2014 - 2017 by Paul Moss. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

@@ -1,0 +1,94 @@
+﻿<html>
+	
+<head>
+	<title>Window Spy</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "index.html?" + sTopicUrl
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("WindowSpy");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Window Spy</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Gui.html">Gui</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Gui.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="LaunchProfileSwap.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Tray.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts12">Window Spy</span></span></h1>
+<p class="rvps2"><span class="rvts11">Window Spy is a utility program that is installed with AutoHotkey. Window Spy allows you to see various information about a window that can be use with AutoHotkey and </span><span class="rvts11">AutoHotkey Snippit</span><span class="rvts11">.</span></p>
+<p class="rvps2"><span class="rvts11"></span><br/><span class="rvts6">To Open Window Spy Right Click on AutoHotkey Snippit Icon in your system tray and choose the Window Spy option as shown in </span><a class="rvts14" href="WindowSpy.html#fig1">Figure 1 </a><span class="rvts6">or if you are in the Profile Edit screen of HotList then you can click the window spy button as shown in </span><a class="rvts14" href="WindowSpy.html#fig2">Figure 2.</a><br/><span class="rvts11"></span><br/><a name="FIG1"></a>
+<span class="rvts21">Figure 1:</span></p>
+<p class="rvps2"><img alt="Popup tray menu" style="vertical-align: text-bottom;" src="lib/Image AutoHotey Snippit Popup Tray spy.png"></p>
+<p class="rvps2"><span class="rvts6"></span><br/><a name="FIG2"></a>
+<span class="rvts21">&nbsp;Figure 2:</span></p>
+<p class="rvps2"><img alt="Profile show window spy button" style="vertical-align: text-bottom;" src="lib/Image Profile window spy.png"><br/><span class="rvts11"></span><br/><span class="rvts6">Open window you want to find the window information for and then open Windows Spy if you have not already done so.</span><br/><span class="rvts6">With Windows Spy Open select the window. Window Spy will stay on top. Window spy will now display the window information. As Show in figure 2. AutoHotkey Snippit can use the ahk_class name or the ahk_exe.</span><br/><span class="rvts6">Also See: </span><a class="rvts14" href="WindowsTab.html">Profile Windows Tab</a><br/><span class="rvts11"></span><br/><a name="FIG3"></a>
+<span class="rvts21">Figure 3:</span></p>
+<p class="rvps2"><img alt="" style="vertical-align: text-bottom;" src="lib/Image windows spy notepad.png"><br/><span class="rvts11"></span><br/><span class="rvts11"><br/></span></p>
+<h3 class="rvps7"><span class="rvts0"><span class="rvts24">Related</span></span></h3>
+<p class="rvps2"><a class="rvts14" href="Profile1.html">Profile</a></p>
+<h3 class="rvps7"><span class="rvts0"><span class="rvts24">Remarks</span></span></h3>
+<p class="rvps2"><span class="rvts6">If the Window Spy option is not displayed on the popup menu as shown in </span><a class="rvts14" href="WindowSpy.html#fig1">figure 1</a><span class="rvts6"> then Window Spy is not installed on your system in the default location. As a workaround try and find the location of AutoHotkey's Window Spy Program and use it.</span><br/><span class="rvts11"><br/></span></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2014 - 2017 by Paul Moss. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

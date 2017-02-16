@@ -1,0 +1,698 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<title>AutoHotkey Snippit Help- Table of Contents</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/silver-theme/jquery-ui-1.8.12.custom.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/dynatree/chm/ui.dynatree.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+    <link type="text/css" rel="stylesheet" media="all" href="css/toc.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#tabs .ui-widget-header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/jquery.dynatree.min.js"></script>
+	<script type="text/javascript" src="js/hndjsse.js"></script>
+	<script type="text/javascript">
+	
+		window.bSearchDataLoaded = false;
+		var sHelpIdToActivate = '';
+	
+		$(document).ready(function()
+		{
+			var sAnchorName = '';
+			try { sAnchorName = top.location.href.substring(top.location.href.lastIndexOf("#") + 1, top.location.href.length); }
+			catch(err) { sAnchorName = ''; }
+			var nSelectedTab = 0;
+			if (sAnchorName == '_index') nSelectedTab = 1
+			else if (sAnchorName == '_search') nSelectedTab = 2;			
+			$("#tabs").tabs({
+				selected: nSelectedTab,
+				select: function(event, ui) { HideKwPopup(); }
+			});
+			
+			// Toc
+			if ($("#tab-toc").length) {
+				$("#tab-toc").dynatree({
+					clickFolderMode: 1,
+					debugLevel: 0,
+					imagePath: 'css/dynatree/chm/',
+					onActivate: function(node){
+						if ($("#tab-keywords").length && $("#tab-keywords").dynatree && $("#tab-keywords").dynatree("getTree") && $("#tab-keywords").dynatree("getTree").activateKey)
+							$("#tab-keywords").dynatree("getTree").activateKey(null);
+						if(node.data.href && node.data.href != '#'){
+							window.open(node.data.href, node.data.target);
+						}
+					}
+				});
+				// Expand all nodes if required
+				$("#tab-toc").dynatree("getRoot").visit(function(node){
+						node.expand(true);
+					});
+				// Select the active help id
+				if (sHelpIdToActivate != '') $("#tab-toc").dynatree("getTree").activateKey(sHelpIdToActivate);
+			}
+			
+			// Keywords
+			
+			if ($("#tab-keywords").length) {
+				$("#tab-keywords").dynatree({
+					clickFolderMode: 1,
+					debugLevel: 0,
+					imagePath: 'css/dynatree/chm/',
+					onClick: function(node, event){
+						HideKwPopup();
+						if (node.data && node.data.click)
+						{
+							var aRefList = null;
+							eval('aRefList=' + node.data.click);
+							if (ShowKwPopup(node.li, aRefList))
+							{
+								if ($("#tab-toc") && $("#tab-toc").dynatree && $("#tab-toc").dynatree("getTree") && $("#tab-toc").dynatree("getTree").activateKey)
+									$("#tab-toc").dynatree("getTree").activateKey(null);
+								if(node.data.href && node.data.href != '#'){
+									window.open(node.data.href, node.data.target);
+								}
+							}
+						}
+					}
+				});
+				// Expand all nodes if required
+				$("#tab-keywords").dynatree("getRoot").visit(function(node){
+						node.expand(true);
+					});
+				}
+			
+			// Load search data
+			(function() {
+				var se = document.createElement('script'); se.type = 'text/javascript'; se.async = true;
+				se.src = 'js/hndsd.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(se, s);
+			})();
+		});
+		
+		$('body').click(function() {
+			HideKwPopup();
+		});
+		
+		function SelectTocItem(sHelpId)
+		{
+			if ($("#tab-toc").length && $("#tab-toc").dynatree && $("#tab-toc").dynatree("getTree") && $("#tab-toc").dynatree("getTree").getNodeByKey) {
+				$("#tab-toc").dynatree("getTree").getNodeByKey(sHelpId).activateSilently();
+			}
+			else {
+				sHelpIdToActivate = sHelpId;
+			}
+		}
+		
+		function HideKwPopup()
+		{
+			if($("#popupMenu")) $("#popupMenu").remove();
+		}
+		
+		function ShowKwPopup(oSender, aLinks)
+		{
+			HideKwPopup();
+			if (!aLinks || !aLinks.length || aLinks.length == 0) return false
+			else if (aLinks.length == 1) return true
+			else
+			{
+				var oParentDiv = document.createElement("DIV");
+				oParentDiv.id = "popupMenu";
+				var oLink = null;
+				// Close button
+				oLink = document.createElement("SPAN");
+				oLink.className = "close-button";
+				oLink.innerHTML = "X";
+				oLink.href = "#";
+				oLink.onclick = HideKwPopup;
+				oParentDiv.appendChild(oLink);
+				// Items
+				for (var nCnt=0; nCnt<aLinks.length; nCnt++)
+				{
+					oLink = document.createElement("A");
+					oLink.innerHTML = aLinks[nCnt][0];
+					oLink.href = aLinks[nCnt][1];
+					oLink.target = "FrameMain";
+					oLink.onclick = HideKwPopup;
+					oParentDiv.appendChild(oLink);
+				}
+				document.body.appendChild(oParentDiv);
+				var pos = $(oSender).offset(); 
+				var height = $(oSender).height();
+				$(oParentDiv).css({
+					"left": (pos.left+20) + "px",
+					"top": (pos.top + height + 5) + "px"
+				});
+				$(oParentDiv).show();
+				return false;
+			}
+		}
+		
+		function PerformSearch()
+		{
+			if (!window.bSearchDataLoaded) {
+				$("#search_results").html("Search engine data hasn't been fully loaded yet or an error occurred while loading it. This usually happens when documentation is browsed locally.");
+				return;
+			}
+			sValue = $("#search_value").val();
+			$("#search_results").html('Searching...');
+			var oSearchEngine = new HndJsSe;
+			oSearchEngine.ParseInput(sValue);			
+			oSearchEngine.PerformSearch();
+			if (!oSearchEngine.aResults || !oSearchEngine.aResults.length)
+			{
+				$("#search_results").html('No results found.');
+			}
+			else
+			{
+				$("#search_results").html('<div id="search_results_content"></div>');
+				var oUl = $("#search_results_content").append("<ul id='lr'></ul>").find("ul");
+				for (var nCnt = 0; nCnt < oSearchEngine.aResults.length; nCnt++)
+				{
+					if (oSearchEngine.aResults[nCnt][0] < aTl.length)
+					{
+						oUl.append("<li><a href='" + aTl[oSearchEngine.aResults[nCnt][0]][0] + "?search=" + escape(sValue) + "' target='FrameMain'>" + unescape(aTl[oSearchEngine.aResults[nCnt][0]][1]) + "</a></li>");
+					}
+				}
+				// Tree
+				$("#search_results_content").dynatree({
+					clickFolderMode: 1,
+					debugLevel: 0,
+					imagePath: 'css/dynatree/chm/',
+					onActivate: function(node){
+						if ($("#search_results_content") && $("#search_results_content").dynatree && $("#search_results_content").dynatree("getTree") && $("#search_results_content").dynatree("getTree").activateKey)
+							$("#search_results_content").dynatree("getTree").activateKey(null);
+						if(node.data.href && node.data.href != '#'){
+							window.open(node.data.href, node.data.target);
+						}
+					}
+				});
+			}
+		}
+	</script>
+</head>
+
+<body>
+
+	<div id="tabs">
+		<ul>
+			<li><a href="#tab-toc">Contents</a></li>
+			<li><a href="#tab-keywords">Index</a></li>
+			<li><a href="#tab-search">Search</a></li>
+			</ul>
+		<div id="tab-toc">
+			<ul id="toc" class="">
+
+				<li class="" id="Welcome" data="">
+							<a
+							href="Welcome.html"
+							target="FrameMain">
+								Welcome</a>
+
+				</li><li class="" id="Gettinghelp" data="">
+							<a
+							href="Gettinghelp.html"
+							target="FrameMain">
+								Getting help</a>
+
+				</li><li class="" id="Hotstrings" data="">
+							<a
+							href="Hotstrings.html"
+							target="FrameMain">
+								Hotstrings</a>
+
+				</li><li class="" id="Hotkeys" data="">
+							<a
+							href="Hotkeys.html"
+							target="FrameMain">
+								Hotkeys</a>
+
+				</li><li class="" id="License" data="">
+							<a
+							href="License.html"
+							target="FrameMain">
+								License</a>
+
+				</li><li class="folder" id="Gui" data="">
+							<a
+							href="Gui.html"
+							target="FrameMain">
+								Gui</a>
+
+				<ul><li class="folder" id="Hotlist" data="">
+							<a
+							href="Hotlist.html"
+							target="FrameMain">
+								Hotlist</a>
+
+				<ul><li class="folder" id="Profile1" data="">
+							<a
+							href="Profile1.html"
+							target="FrameMain">
+								Profile</a>
+
+				<ul><li class="" id="NewProfile" data="">
+							<a
+							href="NewProfile.html"
+							target="FrameMain">
+								New Profile</a>
+
+				</li><li class="" id="EditProfile" data="">
+							<a
+							href="EditProfile.html"
+							target="FrameMain">
+								Edit Profile</a>
+
+				</li><li class="" id="GlobalProfile" data="">
+							<a
+							href="GlobalProfile.html"
+							target="FrameMain">
+								Global Profile</a>
+
+				</li><li class="" id="EndChars" data="">
+							<a
+							href="EndChars.html"
+							target="FrameMain">
+								EndChars</a>
+
+				</li><li class="" id="WindowsTab" data="">
+							<a
+							href="WindowsTab.html"
+							target="FrameMain">
+								Windows Tab</a>
+
+				</li></ul></li><li class="folder" id="Plugin" data="">
+							<a
+							href="Plugin.html"
+							target="FrameMain">
+								Plugin</a>
+
+				<ul><li class="" id="New3" data="">
+							<a
+							href="New3.html"
+							target="FrameMain">
+								New</a>
+
+				</li><li class="" id="Edit1" data="">
+							<a
+							href="Edit1.html"
+							target="FrameMain">
+								Edit</a>
+
+				</li><li class="" id="CopyMove" data="">
+							<a
+							href="CopyMove.html"
+							target="FrameMain">
+								Copy/Move</a>
+
+				</li><li class="" id="CloneObject" data="">
+							<a
+							href="CloneObject.html"
+							target="FrameMain">
+								Clone Object</a>
+
+				</li><li class="folder" id="HotstringPlugin" data="">
+							<a
+							href="HotstringPlugin.html"
+							target="FrameMain">
+								Hotstring Plugin</a>
+
+				<ul><li class="" id="New" data="">
+							<a
+							href="New.html"
+							target="FrameMain">
+								New</a>
+
+				</li><li class="" id="Edit" data="">
+							<a
+							href="Edit.html"
+							target="FrameMain">
+								Edit</a>
+
+				</li><li class="" id="Delete1" data="">
+							<a
+							href="Delete1.html"
+							target="FrameMain">
+								Delete</a>
+
+				</li><li class="folder" id="Replacements" data="">
+							<a
+							href="Replacements.html"
+							target="FrameMain">
+								Replacements</a>
+
+				<ul><li class="" id="InputDialog" data="">
+							<a
+							href="InputDialog.html"
+							target="FrameMain">
+								Input Dialog</a>
+
+				</li><li class="" id="InputFixedListDialog" data="">
+							<a
+							href="InputFixedListDialog.html"
+							target="FrameMain">
+								Input Fixed List Dialog</a>
+
+				</li></ul></li></ul></li><li class="folder" id="HotkeyPlugin" data="">
+							<a
+							href="HotkeyPlugin.html"
+							target="FrameMain">
+								Hotkey Plugin</a>
+
+				<ul><li class="" id="New1" data="">
+							<a
+							href="New1.html"
+							target="FrameMain">
+								New</a>
+
+				</li><li class="" id="Edit2" data="">
+							<a
+							href="Edit2.html"
+							target="FrameMain">
+								Edit</a>
+
+				</li><li class="" id="Delete" data="">
+							<a
+							href="Delete.html"
+							target="FrameMain">
+								Delete</a>
+
+				</li></ul></li><li class="folder" id="IncludePlugin" data="">
+							<a
+							href="IncludePlugin.html"
+							target="FrameMain">
+								Include Plugin</a>
+
+				<ul><li class="" id="New2" data="">
+							<a
+							href="New2.html"
+							target="FrameMain">
+								New</a>
+
+				</li><li class="" id="Edit3" data="">
+							<a
+							href="Edit3.html"
+							target="FrameMain">
+								Edit</a>
+
+				</li><li class="" id="Delete2" data="">
+							<a
+							href="Delete2.html"
+							target="FrameMain">
+								Delete</a>
+
+				</li><li class="" id="IncHotkeys" data="">
+							<a
+							href="IncHotkeys.html"
+							target="FrameMain">
+								Hotkeys</a>
+
+				</li><li class="" id="IncHotStrings" data="">
+							<a
+							href="IncHotStrings.html"
+							target="FrameMain">
+								HotStrings</a>
+
+				</li><li class="" id="IncludeFile" data="">
+							<a
+							href="IncludeFile.html"
+							target="FrameMain">
+								Include File</a>
+
+				</li></ul></li><li class="folder" id="Data" data="">
+							<a
+							href="Data.html"
+							target="FrameMain">
+								Data</a>
+
+				<ul><li class="" id="New4" data="">
+							<a
+							href="New4.html"
+							target="FrameMain">
+								New</a>
+
+				</li><li class="" id="Edit4" data="">
+							<a
+							href="Edit4.html"
+							target="FrameMain">
+								Edit</a>
+
+				</li><li class="" id="Delete3" data="">
+							<a
+							href="Delete3.html"
+							target="FrameMain">
+								Delete</a>
+
+				</li><li class="" id="Import1" data="">
+							<a
+							href="Import1.html"
+							target="FrameMain">
+								Import</a>
+
+				</li></ul></li></ul></li><li class="" id="Import" data="">
+							<a
+							href="Import.html"
+							target="FrameMain">
+								Import</a>
+
+				</li><li class="" id="Export" data="">
+							<a
+							href="Export.html"
+							target="FrameMain">
+								Export</a>
+
+				</li><li class="" id="ValidateInstall" data="">
+							<a
+							href="ValidateInstall.html"
+							target="FrameMain">
+								Validate Install</a>
+
+				</li><li class="" id="ValidatePlugin" data="">
+							<a
+							href="ValidatePlugin.html"
+							target="FrameMain">
+								Validate Plugin</a>
+
+				</li><li class="" id="HotkeyDialog" data="">
+							<a
+							href="HotkeyDialog.html"
+							target="FrameMain">
+								Hotkey Dialog</a>
+
+				</li></ul></li><li class="folder" id="ProfileSwap" data="">
+							<a
+							href="ProfileSwap.html"
+							target="FrameMain">
+								Profile Swap</a>
+
+				<ul><li class="" id="LaunchProfileSwap" data="">
+							<a
+							href="LaunchProfileSwap.html"
+							target="FrameMain">
+								Launch Profile Swap</a>
+
+				</li></ul></li><li class="" id="WindowSpy" data="">
+							<a
+							href="WindowSpy.html"
+							target="FrameMain">
+								Window Spy</a>
+
+				</li><li class="folder" id="Tray" data="">
+							<a
+							href="Tray.html"
+							target="FrameMain">
+								Tray</a>
+
+				<ul><li class="" id="TrayMenu" data="">
+							<a
+							href="TrayMenu.html"
+							target="FrameMain">
+								Tray Menu</a>
+
+				</li></ul></li><li class="" id="NavigationRecordControl" data="">
+							<a
+							href="NavigationRecordControl.html"
+							target="FrameMain">
+								Navigation Record Control</a>
+
+				</li></ul></li></ul>
+		</div>
+		
+		<div id="tab-keywords">
+			<ul id="keywords">
+
+				<li class="file" data="click:'[[\'Clone Object\',\'CloneObject.html\']]'">
+							<a
+								href="CloneObject.html"
+								target="FrameMain"
+								onClick="[['Clone Object','CloneObject.html']]"
+								>
+								Clone</a>
+
+				</li><li class="file" data="click:'[[\'Data\',\'Data.html\'],[\'New\',\'New4.html\'],[\'Edit\',\'Edit4.html\'],[\'Delete\',\'Delete3.html\'],[\'Import\',\'Import1.html\']]'">
+							<a
+								href="Data.html"
+								target="FrameMain"
+								onClick="[['Data','Data.html'],['New','New4.html'],['Edit','Edit4.html'],['Delete','Delete3.html'],['Import','Import1.html']]"
+								>
+								Data</a>
+
+				</li><li class="file" data="click:'[[\'Delete\',\'Delete.html\'],[\'Delete\',\'Delete1.html\'],[\'Delete\',\'Delete3.html\']]'">
+							<a
+								href="Delete.html"
+								target="FrameMain"
+								onClick="[['Delete','Delete.html'],['Delete','Delete1.html'],['Delete','Delete3.html']]"
+								>
+								Delete</a>
+
+				</li><li class="file" data="click:'[[\'Input Dialog\',\'InputDialog.html\'],[\'Input Fixed List Dialog\',\'InputFixedListDialog.html\']]'">
+							<a
+								href="InputDialog.html"
+								target="FrameMain"
+								onClick="[['Input Dialog','InputDialog.html'],['Input Fixed List Dialog','InputFixedListDialog.html']]"
+								>
+								Dialog</a>
+
+				</li><li class="file" data="click:'[[\'Edit\',\'Edit.html\'],[\'Edit\',\'Edit2.html\'],[\'Edit\',\'Edit4.html\']]'">
+							<a
+								href="Edit.html"
+								target="FrameMain"
+								onClick="[['Edit','Edit.html'],['Edit','Edit2.html'],['Edit','Edit4.html']]"
+								>
+								Edit</a>
+
+				</li><li class="file" data="click:'[[\'Export\',\'Export.html\']]'">
+							<a
+								href="Export.html"
+								target="FrameMain"
+								onClick="[['Export','Export.html']]"
+								>
+								Export</a>
+
+				</li><li class="file" data="click:'[[\'Hotkey Plugin\',\'HotkeyPlugin.html\'],[\'New\',\'New1.html\'],[\'Edit\',\'Edit2.html\'],[\'Delete\',\'Delete.html\'],[\'Hotkeys\',\'Hotkeys.html\']]'">
+							<a
+								href="HotkeyPlugin.html"
+								target="FrameMain"
+								onClick="[['Hotkey Plugin','HotkeyPlugin.html'],['New','New1.html'],['Edit','Edit2.html'],['Delete','Delete.html'],['Hotkeys','Hotkeys.html']]"
+								>
+								Hotkey</a>
+
+				</li><li class="file" data="click:'[[\'Hotstring Plugin\',\'HotstringPlugin.html\'],[\'New\',\'New.html\'],[\'Edit\',\'Edit.html\'],[\'Delete\',\'Delete1.html\'],[\'Hotstrings\',\'Hotstrings.html\']]'">
+							<a
+								href="HotstringPlugin.html"
+								target="FrameMain"
+								onClick="[['Hotstring Plugin','HotstringPlugin.html'],['New','New.html'],['Edit','Edit.html'],['Delete','Delete1.html'],['Hotstrings','Hotstrings.html']]"
+								>
+								Hotstring</a>
+
+				</li><li class="file" data="click:'[[\'Validate Plugin\',\'ValidatePlugin.html\'],[\'Validate Install\',\'ValidateInstall.html\'],[\'Import\',\'Import.html\']]'">
+							<a
+								href="ValidatePlugin.html"
+								target="FrameMain"
+								onClick="[['Validate Plugin','ValidatePlugin.html'],['Validate Install','ValidateInstall.html'],['Import','Import.html']]"
+								>
+								Import</a>
+
+				</li><li class="file" data="click:'[[\'Include Plugin\',\'IncludePlugin.html\']]'">
+							<a
+								href="IncludePlugin.html"
+								target="FrameMain"
+								onClick="[['Include Plugin','IncludePlugin.html']]"
+								>
+								Include</a>
+
+				</li><li class="file" data="click:'[[\'License\',\'License.html\']]'">
+							<a
+								href="License.html"
+								target="FrameMain"
+								onClick="[['License','License.html']]"
+								>
+								License</a>
+
+				</li><li class="file" data="click:'[[\'Navigation Record Control\',\'NavigationRecordControl.html\']]'">
+							<a
+								href="NavigationRecordControl.html"
+								target="FrameMain"
+								onClick="[['Navigation Record Control','NavigationRecordControl.html']]"
+								>
+								Navigation</a>
+
+				</li><li class="file" data="click:'[[\'New\',\'New.html\'],[\'New\',\'New1.html\'],[\'New\',\'New4.html\']]'">
+							<a
+								href="New.html"
+								target="FrameMain"
+								onClick="[['New','New.html'],['New','New1.html'],['New','New4.html']]"
+								>
+								New</a>
+
+				</li><li class="file" data="click:'[[\'Validate Plugin\',\'ValidatePlugin.html\'],[\'Validate Install\',\'ValidateInstall.html\'],[\'Include Plugin\',\'IncludePlugin.html\'],[\'Hotstring Plugin\',\'HotstringPlugin.html\'],[\'Hotkey Plugin\',\'HotkeyPlugin.html\']]'">
+							<a
+								href="ValidatePlugin.html"
+								target="FrameMain"
+								onClick="[['Validate Plugin','ValidatePlugin.html'],['Validate Install','ValidateInstall.html'],['Include Plugin','IncludePlugin.html'],['Hotstring Plugin','HotstringPlugin.html'],['Hotkey Plugin','HotkeyPlugin.html']]"
+								>
+								Plugin</a>
+
+				</li><li class="file" data="click:'[[\'Input Dialog\',\'InputDialog.html\'],[\'Input Fixed List Dialog\',\'InputFixedListDialog.html\'],[\'Replacements\',\'Replacements.html\']]'">
+							<a
+								href="InputDialog.html"
+								target="FrameMain"
+								onClick="[['Input Dialog','InputDialog.html'],['Input Fixed List Dialog','InputFixedListDialog.html'],['Replacements','Replacements.html']]"
+								>
+								Replacement</a>
+
+				</li><li class="file" data="click:'[[\'Launch Profile Swap\',\'LaunchProfileSwap.html\']]'">
+							<a
+								href="LaunchProfileSwap.html"
+								target="FrameMain"
+								onClick="[['Launch Profile Swap','LaunchProfileSwap.html']]"
+								>
+								Swap</a>
+
+				</li><li class="file" data="click:'[[\'Validate Plugin\',\'ValidatePlugin.html\'],[\'Validate Install\',\'ValidateInstall.html\']]'">
+							<a
+								href="ValidatePlugin.html"
+								target="FrameMain"
+								onClick="[['Validate Plugin','ValidatePlugin.html'],['Validate Install','ValidateInstall.html']]"
+								>
+								Validate</a>
+
+				</li><li class="file" data="click:'[[\'Validate Plugin\',\'ValidatePlugin.html\'],[\'Validate Install\',\'ValidateInstall.html\']]'">
+							<a
+								href="ValidatePlugin.html"
+								target="FrameMain"
+								onClick="[['Validate Plugin','ValidatePlugin.html'],['Validate Install','ValidateInstall.html']]"
+								>
+								Validation</a>
+
+				</li></ul>
+		</div>
+		
+		<div id="tab-search">
+			<form onsubmit="PerformSearch(); return false;">
+				<label for="search_value">Search:</label>
+				<input id="search_value" name="search_value"></input>
+				<input type="submit" value="Search"/>
+			</form>
+			<div id="search_results"></div>
+		</div>
+		
+		</div>
+    
+</body>
+
+</html>
+

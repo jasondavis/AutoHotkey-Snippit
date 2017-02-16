@@ -1,0 +1,104 @@
+﻿<html>
+	
+<head>
+	<title>Navigation Record Control</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="Navigation">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "index.html?" + sTopicUrl
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("NavigationRecordControl");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Navigation Record Control</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Gui.html">Gui</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Gui.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="TrayMenu.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts12">Navigation Record Control</span></span></h1>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image Nav Record Map.png" usemap="#1699516E217D4CBF9713F924B4712AD3"><map name="1699516E217D4CBF9713F924B4712AD3"><area shape="rect" coords="9,0,33,24" alt="First" title="First" href="NavigationRecordControl.html#nav_first"><area shape="rect" coords="219,0,242,24" alt="Delete" title="Delete" href="NavigationRecordControl.html#Nav Delete"><area shape="rect" coords="34,0,55,24" alt="Previous" title="Previous" href="NavigationRecordControl.html#nav_prev"><area shape="rect" coords="199,0,218,24" alt="Add New" title="Add New" href="NavigationRecordControl.html#nav_new"><area shape="rect" coords="60,0,150,24" alt="Navigate to record" title="Navigate to record" href="NavigationRecordControl.html#nav_textbox"><area shape="rect" coords="172,0,198,24" alt="Last" title="Last" href="NavigationRecordControl.html#nav_last"><area shape="rect" coords="151,0,171,24" alt="Next" title="Next" href="NavigationRecordControl.html#nav_next"></map></p>
+<p class="rvps2"><span class="rvts6">The Navigation record control is used on various forms.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="nav_first"></a>
+<img alt="" style="vertical-align: middle; padding : 1px;" src="lib/Image Nav First.png"><span class="rvts6">Go to first. Button will navigate to the first record in the set.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="nav_prev"></a>
+<img alt="" style="vertical-align: middle; padding : 1px;" src="lib/Image Nav Previous.png"><span class="rvts6">Go to previous. Button will navigate to previous recored in the set.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="nav_textbox"></a>
+<img alt="" style="vertical-align: middle; padding : 1px;" src="lib/Image Nav Textbox.png"><span class="rvts6">Go to input. Input the value of the record to jump to.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="vertical-align: middle; padding : 1px;" src="lib/Image Nav Next.png"><a name="nav_next"></a>
+<span class="rvts6">Go to Next. Button will navigate to next record in the set.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="vertical-align: middle; padding : 1px;" src="lib/Image Nav Last.png"><a name="nav_last"></a>
+<span class="rvts6">Go to Last. Button will navigate to last record in the set.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="nav_new"></a>
+<img alt="" style="vertical-align: middle; padding : 1px;" src="lib/Image Nav Add new.png"><span class="rvts6">Add New. Button will add a new record to the set.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="vertical-align: middle; padding : 1px;" src="lib/Image Nav Delete.png"><a name="Nav Delete"></a>
+<span class="rvts6">Delete. Button will delete the current record from the set.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2014 - 2017 by Paul Moss. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

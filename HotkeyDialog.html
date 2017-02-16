@@ -1,0 +1,120 @@
+﻿<html>
+	
+<head>
+	<title>Hotkey Dialog</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "index.html?" + sTopicUrl
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("HotkeyDialog");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Hotkey Dialog</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Gui.html">Gui</a> &rsaquo;&rsaquo; <a href="Hotlist.html">Hotlist</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Hotlist.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="ValidatePlugin.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="ProfileSwap.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts12">Hotkey Dialog</span></span></h1>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/map_uc_hotkey.png" usemap="#2AB09C3C0B5244A8BF16F74F40DE7D12"><map name="2AB09C3C0B5244A8BF16F74F40DE7D12"><area shape="rect" coords="20,66,156,82" alt="Control Modifier" title="Control Modifier" href="HotkeyDialog.html#hotkey_ctrl"><area shape="rect" coords="19,86,157,104" alt="Alt Modifier" title="Alt Modifier" href="HotkeyDialog.html#hotkey_alt"><area shape="rect" coords="21,106,158,128" alt="Shift Modifier" title="Shift Modifier" href="HotkeyDialog.html#hotkey_shift"><area shape="rect" coords="20,130,157,150" alt="Windows Modifier" title="Windows Modifier" href="HotkeyDialog.html#hotkey_win"><area shape="rect" coords="21,154,249,176" alt="Key 1" title="Key 1" href="HotkeyDialog.html#hotkey_key1"><area shape="rect" coords="20,176,248,197" alt="" title="" href="HotkeyDialog.html#hotkey_key2"><area shape="rect" coords="256,66,474,82" alt="Left Only Modifier" title="Left Only Modifier" href="HotkeyDialog.html#hotkey_mod_left"><area shape="rect" coords="256,88,474,104" alt="Right Only Modifier" title="Right Only Modifier" href="HotkeyDialog.html#hotkey_mod_right"><area shape="rect" coords="256,110,474,126" alt="Wildcard" title="Wildcard" href="HotkeyDialog.html#hotkey_wildcard"><area shape="rect" coords="256,131,474,147" alt="Send keys to active window" title="Send keys to active window" href="HotkeyDialog.html#hotkey_send_to_active"><area shape="rect" coords="256,153,474,170" alt="Install Hook" title="Install Hook" href="HotkeyDialog.html#hotkey_install_hook"><area shape="rect" coords="259,179,473,194" alt="Fire when Key is released" title="Fire when Key is released" href="HotkeyDialog.html#hotkey_fire_when_released"></map></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts21">Hotkey</span><span class="rvts11">: Hotkeys are made up from a combination of the following.</span></p>
+<p class="rvps12"><a name="hotkey_ctrl"></a>
+<span class="rvts21">Ctrl</span><span class="rvts11"> - Adds the </span><span class="rvts19">Control Modifier</span><span class="rvts11"> key to the hotkey</span></p>
+<p class="rvps12"><span class="rvts11"><br/></span></p>
+<p class="rvps12"><a name="hotkey_alt"></a>
+<span class="rvts21">Alt</span><span class="rvts11"> - Adds the </span><span class="rvts19">Alt Modifier</span><span class="rvts11"> key to the hotkey</span></p>
+<p class="rvps12"><span class="rvts11"><br/></span></p>
+<p class="rvps12"><a name="hotkey_shift"></a>
+<span class="rvts21">Shift</span><span class="rvts11"> - Adds the </span><span class="rvts19">Shift Modifier</span><span class="rvts11"> key to the hotkey</span></p>
+<p class="rvps12"><span class="rvts11"><br/></span></p>
+<p class="rvps12"><a name="hotkey_win"></a>
+<span class="rvts21">Win</span><span class="rvts11"> - Adds the Windows Modifier key to the hotkey</span></p>
+<p class="rvps12"><span class="rvts11"><br/></span></p>
+<p class="rvps12"><a name="hotkey_mod_left"></a>
+<span class="rvts21">Left Mod</span><span class="rvts11"> - Only fires hotkey when left modifier key(s) are pressed. Will not respond to right modifier keys</span></p>
+<p class="rvps12"><span class="rvts11"><br/></span></p>
+<p class="rvps12"><a name="hotkey_mod_right"></a>
+<span class="rvts19">Right Mod</span><span class="rvts6"> - Only fires hotkey when right modifier key(s) are pressed. Will not respond to right modifier keys</span></p>
+<p class="rvps12"><span class="rvts6"><br/></span></p>
+<p class="rvps12"><a name="hotkey_wildcard"></a>
+<span class="rvts19">Wildcard</span><span class="rvts6"> - Fire the hotkey even if extra modifiers are being held down.</span></p>
+<p class="rvps12"><span class="rvts6"><br/></span></p>
+<p class="rvps12"><a name="hotkey_send_to_active"></a>
+<span class="rvts19">Send Keys to the active window</span><span class="rvts6">. When the hotkey fires, its key's native function will not be blocked</span><span class="rvts49"> (hidden from the system)</span><span class="rvts6">. See the </span><span class="rvts50">~</span><span class="rvts6"> symbol in </span><a class="rvts52" href="https://autohotkey.com/docs/Hotkeys.htm#Tilde" target="_blank">AutoHotkey documentation</a><span class="rvts6"> for more information</span></p>
+<p class="rvps12"><span class="rvts6"><br/></span></p>
+<p class="rvps12"><a name="hotkey_install_hook"></a>
+<span class="rvts19">Install Hook</span><span class="rvts6"> - install keyboard hook and prevents key from calling itself. See the </span><span class="rvts50">$</span><span class="rvts6"> symbol in </span><a class="rvts52" href="https://autohotkey.com/docs/Hotkeys.htm#prefixdollar" target="_blank">AutoHotkey documentation</a><span class="rvts6"> for more information.</span></p>
+<p class="rvps12"><span class="rvts6"><br/></span></p>
+<p class="rvps12"><a name="hotkey_fire_when_released"></a>
+<span class="rvts19">Fire When key released</span><span class="rvts6"> will not fire the hotkey until the key is released.</span></p>
+<p class="rvps12"><span class="rvts6"><br/></span></p>
+<p class="rvps12"><a name="hotkey_key1"></a>
+<span class="rvts19">Key 1</span><span class="rvts6"> - The main key for the hotkey. Key 1 is always required for a valid hotkey.</span></p>
+<p class="rvps12"><span class="rvts6"><br/></span></p>
+<p class="rvps12"><a name="hotkey_key2"></a>
+<span class="rvts19">Key 2</span><span class="rvts6"> - The optional second key for the hotkey. For instance you may have a hotkey such as </span><span class="rvts50">a+b</span><span class="rvts6"> that would not trigger until both a and b keys are pressed. Or you may use a key combination with modifier such as </span><span class="rvts50">ctrl+win+a+b</span><span class="rvts6"> which would be triggered when </span><span class="rvts19">ctrl+win+a</span><span class="rvts6"> are pressed and released followed by </span><span class="rvts19">b</span><span class="rvts6">.</span></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2014 - 2017 by Paul Moss. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

@@ -1,0 +1,96 @@
+﻿<html>
+	
+<head>
+	<title>Profile Swap</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "index.html?" + sTopicUrl
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("ProfileSwap");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Profile Swap</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Gui.html">Gui</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Gui.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="HotkeyDialog.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="LaunchProfileSwap.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts12">Profile Swap</span></span></h1>
+<p class="rvps2"><span class="rvts6">Profile Swap switches between the different profiles currently installed. If the </span><a href="Tray.html"><img alt="" style="vertical-align: middle; padding : 1px;" src="lib/Image_icon_tray.png"></a><a class="rvts14" href="Tray.html">Tray</a><span class="rvts6"> is running then your can </span><a class="rvts14" href="LaunchProfileSwap.html">launch the Profile Swap</a><span class="rvts6"> window show in </span><a class="rvts14" href="ProfileSwap.html#fig1">figure 1</a><span class="rvts6"> and choose a different profile to swap.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">You can also swap profiles in the </span><a class="rvts14" href="Hotlist.html">Hotlist</a><span class="rvts6"> by clicking on the Swap Profile button as show in </span><a class="rvts14" href="ProfileSwap.html#fig2">figure 2</a><span class="rvts6">. The &nbsp;Swap Profile button is only available if the selected profile is not the active profile.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig1"></a>
+<span class="rvts13">Figure 1:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image Profile Swap.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><a name="fig2"></a>
+<span class="rvts13">Figure 2:</span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Image_hotlist_swap_profile.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps7"><span class="rvts0"><span class="rvts24">Related</span></span></h3>
+<p class="rvps2"><a class="rvts14" href="Hotlist.html">Hotlist</a></p>
+<p class="rvps2"><a class="rvts14" href="LaunchProfileSwap.html">Launch Profile Swap</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2014 - 2017 by Paul Moss. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+
